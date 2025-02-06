@@ -1,0 +1,37 @@
+body{
+
+    margin: 0px;
+    background-color: rgb(201, 189, 175);
+    
+}
+
+/*Temporary*/
+footer{
+    margin-top: 100%;
+}
+
+.FooterContainer{
+
+    background-color: rgb(126, 99, 66);
+    display: flex;
+    text-align: center;
+    color:rgb(235, 227, 215);
+    padding: 50px;
+    
+
+    
+
+}
+.aboutUs, .fastLinks, .contactUs, .other{
+
+    flex-grow: 1;
+}
+
+#footerCopyRight{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(100, 72, 37);
+    font-weight: bolder;
+
+}
