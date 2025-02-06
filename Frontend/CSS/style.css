@@ -15,7 +15,7 @@ footer{
     background-color: rgb(126, 99, 66);
     display: flex;
     text-align: center;
-    color:rgb(235, 227, 215);
+    color:rgb(219, 214, 205);
     padding: 50px;
     
 
@@ -37,6 +37,12 @@ footer{
     font-weight: bolder;
 
 }
-.icons{
-    width: 80px;
+h4:hover{
+
+    color:rgb(73, 49, 20);
+    text-decoration:underline;
+}
+h1:hover{
+    text-decoration:underline;
+
 }
