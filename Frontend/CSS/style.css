@@ -27,6 +27,8 @@ footer{
     flex-grow: 1;
 }
 
+
+
 #footerCopyRight{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -34,4 +36,7 @@ footer{
     color:rgb(100, 72, 37);
     font-weight: bolder;
 
+}
+.icons{
+    width: 80px;
 }
