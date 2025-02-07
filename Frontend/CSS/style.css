@@ -5,6 +5,8 @@ body{
     
 }
 
+
+
 /*Temporary*/
 footer{
     margin-top: 100%;
@@ -17,17 +19,12 @@ footer{
     text-align: center;
     color:rgb(219, 214, 205);
     padding: 50px;
-    
-
-    
 
 }
 .aboutUs, .fastLinks, .contactUs, .other{
 
     flex-grow: 1;
 }
-
-
 
 #footerCopyRight{
     margin-top: 20px;
@@ -39,10 +36,21 @@ footer{
 }
 h4:hover{
 
-    color:rgb(73, 49, 20);
+    color:rgb(100, 72, 37);
     text-decoration:underline;
 }
 h1:hover{
     text-decoration:underline;
 
+}
+
+.fa-brands:hover {
+    transform: scale(1.2);
+  
+}
+
+.fa-brands{
+
+    padding: 15px;
+  
 }
