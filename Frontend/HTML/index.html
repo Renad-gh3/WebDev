@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الصفحة الرئيسية</title>
-
-    <link rel="stylesheet" href="/Frontend/CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
   </head>
   <body>
     <header>
       <nav>
-        <ul>
-          <img id="logo" src="/Frontend/Media/logo.jpg" alt="logo" />
+        <div class="logo">
+          <img id="logo" src="../Media/masrad.PNG" alt="logo" />
+        </div>
+        <ul class="nav-links">
           <li><a href="">الأخبار</a></li>
-          <li><a href="">من نحن ؟</a></li>
-          <li><a href=""> تواصل معنا </a></li>
+          <li><a href="">من نحن</a></li>
+          <li><a href="">تواصل معنا</a></li>
           <li><a href="">الصفحة الرئيسية</a></li>
         </ul>
-        <!--<button type="button">تسجيل الدخول</button> -->
+        <div class="login-btn">
+          <button>تسجيل الدخول</button>
+        </div>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </nav>
     </header>
-    >>>>>>> 822216a05757529b21dd68b5269331b92307b492
+
     <footer>
       <section class="FooterContainer">
         <div class="contactUs">
@@ -36,21 +41,18 @@
           <i class="fa-brands fa-square-whatsapp fa-2xl"></i>
           <i class="fa-brands fa-square-instagram fa-2xl"></i>
         </div>
-
         <div class="other">
           <h1>خدمات اخرى</h1>
           <h4>العنوان الفرعي</h4>
           <h4>العنوان الفرعي</h4>
           <h4>العنوان الفرعي</h4>
         </div>
-
         <div class="aboutUs">
           <h1>من نحن</h1>
           <h4>عن الشركة</h4>
           <h4>عملائنا</h4>
           <h4>شركاؤنا</h4>
         </div>
-
         <div class="fastLinks">
           <h1>روابط سريعة</h1>
           <h4>سياسة الخصوصية</h4>
@@ -58,7 +60,9 @@
           <h4>الدعم الفني</h4>
         </div>
       </section>
-      <section id="footerCopyRight">جميع الحقوق محفوظة &copy 2025</section>
+      <section id="footerCopyRight">جميع الحقوق محفوظة &copy; 2025</section>
     </footer>
+
+    <script src="../JS/script.js"></script>
   </body>
 </html>

@@ -1,106 +1,187 @@
-
-*{
-    padding: 0px;
-}
-body{
-    background-color: rgb(201, 189, 175);
-    box-sizing: border-box;
-    
-}
-#logo{
-   margin-top: 20px;
-   width: 200px;
-   /*border-radius: 0 15px 15px 0;*/
-   border-radius: 15px;
-   padding-left: 0;
-}
-header{
-
-    height: 400px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/Frontend/Media/desert-sand-sunset.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
+/* Reset CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-nav ul{
-    
+body {
+  background-color: rgb(201, 189, 175);
+  font-family: "Tajawal", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar Styling */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.logo {
+  order: 3;
+}
+
+.logo img {
+  width: 140px;
+  border-radius: 15px;
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+  order: 1;
+}
+
+.login-btn button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn button:hover {
+  background-color: #ddd;
+}
+
+/* قائمة الروابط */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  order: 2;
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* برغر منيو */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .burger {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-}
+  }
 
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 20px;
+  }
 
-nav ul li{
-    
-    list-style-type: none;
-    padding: 30px;
-
-}
-nav ul li a{
-
-
-    white-space: nowrap;
-    color: aliceblue;
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: 20px;
-   
-}
-nav ul li a:hover{
-
-   text-decoration: underline;
-
-}
-
-
-/*Temporary*/
-footer{
-    margin-top: 100%;
-}
-
-.FooterContainer{
-
-    background-color: rgb(126, 99, 66);
+  .nav-links.active {
     display: flex;
-    text-align: center;
-    color:rgb(219, 214, 205);
-    padding: 50px;
+  }
+
+  /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
+  .login-btn {
+    display: none;
+  }
+
+  .nav-links::before {
+    content: "تسجيل الدخول";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    padding: 10px;
     border-radius: 20px;
-
-}
-.aboutUs, .fastLinks, .contactUs, .other{
-
-    flex-grow: 1;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
 }
 
-#footerCopyRight{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    color:rgb(91, 66, 35);
-    font-weight: bolder;
-
+/* Footer Styling */
+.FooterContainer {
+  background-color: rgb(126, 99, 66);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  color: rgb(219, 214, 205);
+  padding: 50px;
+  border-radius: 20px;
+  justify-content: space-around;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
-h4:hover{
 
-    color:rgb(73, 51, 22);
-    text-decoration:underline;
+.aboutUs,
+.fastLinks,
+.contactUs,
+.other {
+  flex: 1;
+  min-width: 200px;
 }
-h1:hover{
-    text-decoration:underline;
 
+#footerCopyRight {
+  text-align: center;
+  color: rgb(91, 66, 35);
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h4:hover {
+  color: rgb(73, 51, 22);
+  text-decoration: underline;
+}
+
+h1:hover {
+  text-decoration: underline;
+}
+
+.fa-brands {
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .fa-brands:hover {
-    transform: scale(1.2);
-  
-}
-
-.fa-brands{
-
-    padding: 15px;
-  
+  transform: scale(1.2);
 }
