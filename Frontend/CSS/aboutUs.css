@@ -1,0 +1,139 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(201, 189, 175);
+    font-family: "Tajawal", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  
+  /* Navbar Styling */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    z-index: 1000;
+  }
+  
+  .logo {
+    order: 3;
+  }
+  
+  .logo img {
+    width: 140px;
+    border-radius: 15px;
+  }
+  
+  /* زر تسجيل الدخول */
+  .login-btn {
+    order: 1;
+  }
+  
+  .login-btn button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .login-btn button:hover {
+    background-color: #ddd;
+  }
+  
+  /* قائمة الروابط */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    order: 2;
+  }
+  
+  .nav-links li {
+    text-align: center;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Cairo", sans-serif;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* برغر منيو */
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.4s;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      text-align: center;
+      display: none;
+      padding: 20px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
+    .login-btn {
+      display: none;
+    }
+  
+    .nav-links::before {
+      content: "تسجيل الدخول";
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  }
