@@ -1,0 +1,170 @@
+body {
+    font-family: 'Amiri', serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f5f5f5;
+    text-align: right; /* Right-align text for RTL */
+    direction: rtl; /* Right-to-left direction */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header Styles */
+  header {
+    background: #2c5f2d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #d4af37;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #d4af37;
+  }
+  
+  /* Contact Form Styles */
+  .contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2c5f2d;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c5f2d;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="email"],
+  .form-group input[type="date"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d4af37;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Amiri', serif;
+    background-color: #f9f9f9;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .gender-options {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  button {
+    background: #2c5f2d;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Amiri', serif;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #d4af37;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background: #2c5f2d;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 5px solid #d4af37;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .contact-form {
+      padding: 15px;
+    }
+  
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="date"],
+    .form-group select,
+    .form-group textarea {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+  }
