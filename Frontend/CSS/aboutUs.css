@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
   }
   
   body {
@@ -137,3 +138,108 @@
       cursor: pointer;
     }
   }
+
+/*********************/
+
+.section1{
+
+  font-size: larger;
+  margin: 120px 100px 20px 100px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+}
+h1{
+  font-size:40px;
+  margin-bottom: 20px;
+  
+}
+  table {
+    table-layout: fixed;
+    margin: auto;
+    width: 35%;
+    /*border-collapse: collapse;*/
+    margin-bottom: 30px;
+   
+}
+
+th, td {
+
+    border: 1px solid;
+    padding: 15px;
+   
+}
+
+/*Data in row*/
+td {
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.footer{
+
+  background-color:rgba(0, 0, 0, 0.85);
+  color: #ddd;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Tajawal", sans-serif;
+  
+}
+
+.footerContainer{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.footerSections{
+
+  max-width: 300px;
+}
+
+.footerSections h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.footerSections h4, .footerSections p {
+  margin: 5px 0;
+}
+.footerSections img {
+  margin-top: 10px;
+  
+}
+
+.footerSections i {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.footerCopyRight {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+
+@media (min-width: 768px) {
+  .footerContainer {
+      flex-direction: row;
+      justify-content: space-around;
+     text-align: center;
+  }
+}
+
+
+
+
