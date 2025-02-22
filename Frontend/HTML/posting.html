@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسرد للسفر - اسرد سفرتك</title>
+  <link rel="stylesheet" href="../CSS/posting.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+
+<body id="city-background">
+  <nav>
+    <div class="logo">
+      <img id="logo" src="../Media/masrad.PNG" alt="logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="">الأخبار</a></li>
+      <li><a href="">من نحن</a></li>
+      <li><a href="">تواصل معنا</a></li>
+      <li><a href="">الصفحة الرئيسية</a></li>
+    </ul>
+    <div class="login-btn">
+      <button>تسجيل الدخول</button>
+    </div>
+    <div class="burger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+
+  <main class="container">
+    <article class="post-blog">
+      <h2>كتابة سرد جديد </h2>
+      <form id="blogForm" action="/submit-blog" method="POST" enctype="multipart/form-data">
+        
+        <!-- Date Picker and Activities -->
+        <div class="Activities-date">
+          <ul class="activities-container">
+            <li><input type="checkbox" id="checkboxOne" value="طبيعة"><label for="checkboxOne">طبيعة</label></li>
+            <li><input type="checkbox" id="checkboxTwo" value="تاريخي"><label for="checkboxTwo">تاريخي</label></li>
+            <li><input type="checkbox" id="checkboxThree" value="ثقافي"><label for="checkboxThree">ثقافي</label></li>
+            <li><input type="checkbox" id="checkboxFour" value="ترفيهي"><label for="checkboxFour">ترفيهي</label></li>
+            <li><input type="checkbox" id="checkboxFive" value="تعليمي"><label for="checkboxFive">تعليمي</label></li>
+            <li><input type="checkbox" id="checkboxSeven" value="علاجي"><label for="checkboxSeven">علاجي</label></li>
+            <input   type="date" lang="en" required />
+           
+            <!-- City and Title -->
+          <select id="city" name="city" required>
+            <option value="" disabled selected>اختر المدينة</option>
+            <option value="الرياض">الرياض</option>
+            <option value="جدة">جدة</option>
+            <option value="مكة المكرمة">مكة المكرمة</option>
+            <option value="ينبع">ينبع</option>
+            <option value="الطائف">الطائف</option>
+            <option value="الجبيل">الجبيل</option>
+            <option value="الباحة">الباحة</option>
+            <option value="العلا">العلا</option>
+            <option value="نجران">نجران</option>
+            <option value="جازان">جازان</option>
+            <option value="القصيم">القصيم</option>
+            <option value="حائل">حائل</option>
+            <option value="تبوك">تبوك</option>
+            <option value="عسير">عسير</option>
+          </select>
+          <input type="text" id="title" name="title" placeholder="عنوان مَسردك" required>
+          </ul>
+        </div>
+
+
+        <!-- Image Upload and Textarea -->
+        <div class="content-container">
+          <div class="textarea-wrapper">
+            <textarea id="content" name="content" rows="10" placeholder="محتوى سردك" required></textarea>
+
+              <!-- الصورة كزينة في نهاية المحتوى -->
+            <div class="image-decoration">
+              <img src="../Media/purple-sado-pattern-vertivcal-long.png" alt="السدو البنفسجي" class="responsive-image" />
+            </div>
+          </div>
+
+          <div class="file-upload-container">
+            <div class="file-upload">
+              <input multiple="" class="file-input" id="fileInput" type="file" />
+              <label class="file-label" for="fileInput">
+                <i class="upload-icon">📁</i>
+                <p>Drag &amp; Drop your files or click to upload</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">انشر سردك وابداعك</button>
+      </form>
+    </article>
+  </main>
+
+
+  
+  <img class="footerimg" src="../Media/footer.png" />
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- الشعار -->
+      <div class="footer-logo">
+        <img id="logo" src="../Media/masrad.PNG" alt="logo" />
+      </div>
+      <!-- الروابط السريعة -->
+      <ul class="footer-links">
+        <li><a href="">الأخبار</a></li>
+        <li><a href="">من نحن</a></li>
+        <li><a href="">تواصل معنا</a></li>
+        <li><a href="">الصفحة الرئيسية</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 جميع الحقوق محفوظة لموقع مسرّد</p>
+    </div>
+  </footer>
+
+
+  <script src="../JS/posting.js"></script>
+</body>
+</html>
