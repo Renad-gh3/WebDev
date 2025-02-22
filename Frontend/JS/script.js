@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// للحذففف \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+const deleteButtons = document.querySelectorAll(".delete-button");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const blogCard = this.closest(".blog-card");
+      if (blogCard) {
+        blogCard.remove();
+      }
+    });
+  });
+
 // photo slider
 let items = document.querySelectorAll(".slider .list .item");
 let next = document.getElementById("next");
@@ -76,3 +87,26 @@ thumbnails.forEach((thumbnail, index) => {
     showSlider();
   });
 });
+
+
+let slideIndex = 0;
+
+function showSlides() {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    }
+    if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    }
+    slides.style.transform = `translateX(${-slideIndex * 220}px)`; // 220px هي عرض الصورة مع الهوامش
+}
+
+function moveSlides(n) {
+    slideIndex += n;
+    showSlides();
+}
+
+// عرض الشرائح الأولى عند تحميل الصفحة
+window.onload = showSlides;
