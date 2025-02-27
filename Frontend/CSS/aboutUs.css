@@ -1,245 +1,235 @@
 /* Reset CSS */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
-  }
-  
-  body {
-    background-color: rgb(201, 189, 175);
-    font-family: "Tajawal", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(201, 189, 175);
+  font-family: "Tajawal", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* Navbar Styling */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.logo {
+  order: 3;
+}
+
+.logo img {
+  width: 140px;
+  border-radius: 15px;
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+  order: 1;
+}
+
+.login-btn button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn button:hover {
+  background-color: #ddd;
+}
+
+/* قائمة الروابط */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  order: 2;
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* برغر منيو */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .burger {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
   }
-  
-  /* Navbar Styling */
-  nav {
-    position: fixed;
-    top: 0;
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 20px;
+  }
+
+  .nav-links.active {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 50px;
-    z-index: 1000;
   }
-  
-  .logo {
-    order: 3;
-  }
-  
-  .logo img {
-    width: 140px;
-    border-radius: 15px;
-  }
-  
-  /* زر تسجيل الدخول */
+
+  /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
   .login-btn {
-    order: 1;
+    display: none;
   }
-  
-  .login-btn button {
+
+  .nav-links::before {
+    content: "تسجيل الدخول";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
     background-color: white;
     color: black;
-    border: none;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .login-btn button:hover {
-    background-color: #ddd;
-  }
-  
-  /* قائمة الروابط */
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 40px;
-    order: 2;
-  }
-  
-  .nav-links li {
-    text-align: center;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "Cairo", sans-serif;
-    transition: 0.3s;
-  }
-  
-  .nav-links li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* برغر منيو */
-  .burger {
-    display: none;
-    flex-direction: column;
+    margin-bottom: 10px;
     cursor: pointer;
   }
-  
-  .burger div {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    margin: 5px;
-    transition: 0.4s;
-  }
-  
-  /* Responsive Navbar */
-  @media (max-width: 768px) {
-    .burger {
-      display: flex;
-    }
-  
-    .nav-links {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      flex-direction: column;
-      text-align: center;
-      display: none;
-      padding: 20px;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
-    .login-btn {
-      display: none;
-    }
-  
-    .nav-links::before {
-      content: "تسجيل الدخول";
-      display: block;
-      font-size: 18px;
-      font-weight: bold;
-      background-color: white;
-      color: black;
-      padding: 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-  }
+}
 
 /*********************/
 
-.section1{
-
+.section1 {
   font-size: larger;
   margin: 120px 100px 20px 100px;
-  font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
-h1{
-  font-size:40px;
+h1 {
+  font-size: 40px;
   margin-bottom: 20px;
-  
 }
-  table {
-    table-layout: fixed;
-    margin: auto;
-    width: 35%;
-    /*border-collapse: collapse;*/
-    margin-bottom: 30px;
-   
+table {
+  table-layout: fixed;
+  margin: auto;
+  width: 35%;
+  /*border-collapse: collapse;*/
+  margin-bottom: 30px;
 }
 
-th, td {
-
-    border: 1px solid;
-    padding: 15px;
-   
+th,
+td {
+  border: 1px solid;
+  padding: 15px;
 }
 
 /*Data in row*/
 td {
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family:'Times New Roman', Times, serif;
-    font-size: 20px;
-    text-align: center;
-    
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  text-align: center;
 }
 
-.footer{
-
-  background-color:rgba(0, 0, 0, 0.85);
+.footer {
+  background-color: rgba(0, 0, 0, 0.85);
   color: #ddd;
   padding: 40px 20px;
   text-align: center;
   font-family: "Tajawal", sans-serif;
-  
-}
 
-.footerContainer{
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-.footerSections{
-
-  max-width: 300px;
-}
-
-.footerSections h1 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-.footerSections h4, .footerSections p {
-  margin: 5px 0;
-}
-.footerSections img {
-  margin-top: 10px;
-  
-}
-
-.footerSections i {
-  color: white;
-  font-size: 30px;
-  margin: 10px;
-  cursor: pointer;
-  transform: scale(1.02);
-}
-
-.footerCopyRight {
-  margin-top: 20px;
-  border-top: 1px solid #444;
-  padding-top: 10px;
-  font-size: 14px;
-  color: white;
-}
-
-
-@media (min-width: 768px) {
-  .footerContainer {
-      flex-direction: row;
-      justify-content: space-around;
-     text-align: center;
+  .footerimg {
+    margin-top: 8rem;
   }
-}
-
-
-
-
+  .footer {
+    background-color: #2e2e2e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .footer-logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #38a5b6;
+  }
+  
+  .footer-bottom p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #747272;
+  
+    text-align: center;
+  }
+  

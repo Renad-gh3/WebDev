@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
@@ -8,17 +8,16 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-image 0.5s ease;
-  font-family: 'Amiri', serif;
-  color: #2D2B2A;
+  font-family: "Amiri", serif;
+  color: #2d2b2a;
   line-height: 1.6;
   background-image: url(../Media/background-posting.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color:  rgb(237, 230, 221);
+  background-color: rgb(237, 230, 221);
   flex-direction: column;
   min-height: 100vh;
-
 }
 
 /* Container */
@@ -26,7 +25,7 @@ body {
   padding: 30px;
   border-radius: 10px;
   text-align: right;
-  width: 90%;  /* Make it responsive */
+  width: 90%; /* Make it responsive */
   max-width: 1500px;
 }
 
@@ -40,12 +39,10 @@ article.post-blog {
 article.post-blog h2 {
   margin-top: 60px;
   font-size: 2rem;
-  color: #2D2B2A;
+  color: #2d2b2a;
   text-align: right;
   font-family: "Tajawal", sans-serif;
-
 }
-
 
 /* Form Styles */
 form {
@@ -53,7 +50,6 @@ form {
   flex-direction: column;
   gap: 15px;
 }
-
 
 /* الحاوية الرئيسية */
 .Activities-date {
@@ -98,7 +94,7 @@ ul.activities-container li label {
 
 /* التأثير عند التحديد */
 ul.activities-container li input[type="checkbox"]:checked + label {
-  border: 2px solid #EDE6DE;
+  border: 2px solid #ede6de;
   background-color: #38a5b6;
   color: white;
 }
@@ -135,7 +131,7 @@ input[type="date"] {
 /* صندوق اختيار المدينة */
 #city {
   padding: 10px;
-  border: 2px solid #2D2B2A;
+  border: 2px solid #2d2b2a;
   border-radius: 12px;
   font-size: 1.3rem;
   background-color: #38a5b6;
@@ -165,7 +161,9 @@ input[type="date"] {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .date-picker, .city-container, .title-container {
+  .date-picker,
+  .city-container,
+  .title-container {
     width: 100%;
     justify-content: center;
     margin-bottom: 10px;
@@ -184,18 +182,16 @@ input[type="date"] {
     flex-wrap: wrap;
     justify-content: center;
   }
-  input[type="date"], #city, #title {
+  input[type="date"],
+  #city,
+  #title {
     width: 100%;
   }
-
 
   body {
     background-attachment: scroll; /* إلغاء تثبيت الصورة على الشاشات الصغيرة */
   }
 }
-
-
-
 
 /* ترتيب العناصر جنبًا إلى جنب */
 .content-container {
@@ -225,7 +221,7 @@ textarea {
   resize: vertical; /* السماح بتغيير الارتفاع عموديًا فقط */
 }
 
-/*Start File style */ 
+/*Start File style */
 .file-upload-container {
   flex: 1; /* يأخذ مساحة أقل */
   min-width: 200px; /* الحد الأدنى للعرض */
@@ -243,7 +239,7 @@ textarea {
 }
 
 .file-upload:hover {
-  background-color: #EDE6DE;
+  background-color: #ede6de;
 }
 
 .file-input {
@@ -260,7 +256,7 @@ textarea {
 
 .upload-icon {
   font-size: 40px;
-  color: #2D2B2A;
+  color: #2d2b2a;
 }
 
 .file-upload p {
@@ -316,9 +312,6 @@ textarea {
     font-size: 14px; /* تقليل حجم النص */
   }
 }
-
-
-
 
 /*Start of image purple sado style*/
 /* تنسيق عام لـ textarea-wrapper */
@@ -377,7 +370,6 @@ textarea {
   }
 }
 
-
 /* Submit Button Styles */
 .submit-button {
   background: #38a5b6;
@@ -395,7 +387,6 @@ textarea {
   margin-top: 15px;
   display: block; /* لجعل الزر يأخذ المساحة كاملة */
   font-family: "Tajawal", sans-serif;
-
 }
 
 .submit-button:hover {
@@ -414,15 +405,6 @@ textarea {
   height: auto;
   border-radius: 10px; /* إضافة حواف ناعمة */
 }
-
-
-
-
-
-
-
-
-
 
 /*من هنا حطيت كود css 
 الي اخذته من ريناد حق الفوتر والهيدر*/
@@ -551,13 +533,11 @@ nav {
   }
 }
 
-
-
 /* فوتر */
-.footerimg {
-  margin-top: 3rem;
-}
 
+.footerimg {
+  margin-top: 8rem;
+}
 .footer {
   background-color: #2e2e2e;
   color: #fff;
@@ -603,5 +583,6 @@ nav {
   margin-top: 20px;
   font-size: 14px;
   color: #747272;
+
   text-align: center;
 }

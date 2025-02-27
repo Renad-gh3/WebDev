@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
 /* Reset CSS */
 * {
   padding: 0;
@@ -45,6 +48,7 @@ nav {
 /* زر تسجيل الدخول */
 .login-btn {
   order: 1;
+  font-family: "Tajawal", sans-serif;
 }
 
 .login-btn button {
@@ -80,7 +84,7 @@ nav {
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  font-family: "Cairo", sans-serif;
+  font-family: "Tajawal", sans-serif;
   transition: 0.3s;
 }
 
@@ -146,7 +150,7 @@ nav {
 
 /* photo slider */
 .slider {
-  height: 105vh;
+  height: 110vh;
   margin-top: -50px;
   position: relative;
 }
@@ -281,6 +285,11 @@ nav {
   }
 }
 
+.content h3,
+h2 {
+  font-family: "Tajawal", sans-serif;
+}
+
 /* المدونات */
 .container {
   max-width: 1200px;
@@ -297,36 +306,89 @@ nav {
   margin-right: 20px;
 }
 
+/* تنسيق عام لزراير المدن والفعاليات */
 .scroll-buttons {
   display: flex;
   overflow-x: auto;
-  gap: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  width: 50rem;
-  margin-left: 10rem;
-  margin-right: 10rem;
+  gap: 12px;
+  padding: 16px 0;
+  margin: 20px 0;
+  scrollbar-width: none; /* لإخفاء شريط التمرير في الفايرفوكس */
+  -ms-overflow-style: none; /* لإخفاء شريط التمرير في IE */
 }
 
 .scroll-buttons::-webkit-scrollbar {
-  display: none;
+  display: none; /* لإخفاء شريط التمرير في الكروم وسفاري */
 }
 
+/* التنسيق الأساسي للزراير */
 .city-button,
 .event-button {
+  flex-shrink: 0;
+  padding: 12px 24px;
   border: none;
-  background: #38a5b6;
-  padding: 10px 20px;
   border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* تمايز ألوان المدن عن الفعاليات */
+.city-button {
+  background: linear-gradient(145deg, #2c3e50, #3498db);
   color: white;
 }
 
+.event-button {
+  background: linear-gradient(145deg, #e67e22, #d35400);
+  color: white;
+}
+
+/* تأثيرات التمرير */
 .city-button:hover,
 .event-button:hover {
-  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.city-button:active,
+.event-button:active {
+  transform: translateY(1px);
+}
+
+/* حالة النشط أو المحدد */
+.city-button.active,
+.event-button.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .city-button,
+  .event-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .scroll-buttons {
+    gap: 8px;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .city-button,
+  .event-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+.blog-card {
+  margin-top: 3rem;
 }
 
 /* الشاشات الصغيرة (أقل من 576px) */

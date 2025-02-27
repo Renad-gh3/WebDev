@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // للحذففف \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const deleteButtons = document.querySelectorAll(".delete-button");
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const blogCard = this.closest(".blog-card");
-      if (blogCard) {
-        blogCard.remove();
-      }
-    });
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const blogCard = this.closest(".blog-card");
+    if (blogCard) {
+      blogCard.remove();
+    }
   });
+});
 
 // photo slider
 let items = document.querySelectorAll(".slider .list .item");
@@ -72,13 +72,6 @@ function showSlider() {
     next.click();
   }, 9000);
 }
-// function setPositionThumbnail() {
-//   let thumbnailActive = document.querySelector(".thumbnail .item.active");
-//   let rect = thumbnailActive.getBoundingClientRect();
-//   if (rect.left < 0 || rect.right > window.innerWidth) {
-//     thumbnailActive.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-//   }
-// }
 
 // click thumbnail
 thumbnails.forEach((thumbnail, index) => {
@@ -88,25 +81,30 @@ thumbnails.forEach((thumbnail, index) => {
   });
 });
 
-
 let slideIndex = 0;
 
 function showSlides() {
-    const slides = document.querySelector('.slides');
-    const totalSlides = slides.children.length;
-    if (slideIndex >= totalSlides) {
-        slideIndex = 0;
-    }
-    if (slideIndex < 0) {
-        slideIndex = totalSlides - 1;
-    }
-    slides.style.transform = `translateX(${-slideIndex * 220}px)`; // 220px هي عرض الصورة مع الهوامش
+  const slides = document.querySelector(".slides");
+  const totalSlides = slides.children.length;
+  if (slideIndex >= totalSlides) {
+    slideIndex = 0;
+  }
+  if (slideIndex < 0) {
+    slideIndex = totalSlides - 1;
+  }
+  slides.style.transform = `translateX(${-slideIndex * 220}px)`; // 220px هي عرض الصورة مع الهوامش
 }
 
 function moveSlides(n) {
-    slideIndex += n;
-    showSlides();
+  slideIndex += n;
+  showSlides();
 }
 
 // عرض الشرائح الأولى عند تحميل الصفحة
 window.onload = showSlides;
+
+document.querySelectorAll(".city-button, .event-button").forEach((button) => {
+  button.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+});
