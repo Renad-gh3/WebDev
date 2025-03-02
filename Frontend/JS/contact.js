@@ -1,45 +1,64 @@
 // Function to validate the form
 function validateForm() {
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const mobile = document.getElementById('mobile').value.trim();
-    const dob = document.getElementById('dob').value;
-    const email = document.getElementById('email').value.trim();
-    const language = document.getElementById('language').value;
-    const message = document.getElementById('message').value.trim();
-  
-    // Check if all fields are filled
-    if (firstName === '' || lastName === '' || mobile === '' || dob === '' || email === '' || language === '' || message === '') {
-      alert('الرجاء ملء جميع الحقول المطلوبة.');
-      return false; // Prevent form submission
-    }
-  
-    // Validate mobile number (basic check for 10 digits)
-    if (!/^\d{10}$/.test(mobile)) {
-      alert('الرجاء إدخال رقم جوال صحيح مكون من 10 أرقام.');
-      return false;
-    }
-  
-    // Validate email format
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert('الرجاء إدخال بريد إلكتروني صحيح.');
-      return false;
-    }
-  
-    // If everything is valid, show a success message
-    alert('تم إرسال النموذج بنجاح!');
-    return true; // Allow form submission
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked');
+  const mobile = document.getElementById('mobile').value.trim();
+  const dob = document.getElementById('dob').value;
+  const email = document.getElementById('email').value.trim();
+  const language = document.getElementById('language').value;
+  const message = document.getElementById('message').value.trim();
+
+  const errors = [];
+
+  if (firstName === '') errors.push('الرجاء إدخال الاسم الأول.');
+  if (lastName === '') errors.push('الرجاء إدخال الاسم الأخير.');
+  if (!gender) errors.push('الرجاء اختيار الجنس.');
+  if (mobile === '') errors.push('الرجاء إدخال رقم الجوال.');
+  if (dob === '') errors.push('الرجاء إدخال تاريخ الميلاد.');
+  if (email === '') errors.push('الرجاء إدخال البريد الإلكتروني.');
+  if (language === '') errors.push('الرجاء اختيار اللغة المفضلة.');
+  if (message === '') errors.push('الرجاء كتابة الرسالة.');
+
+  // Validate mobile number (basic check for Saudi format e.g., 05XXXXXXXX)
+  const mobileRegex = /^(05|5)\d{8}$/;
+  if (mobile && !mobileRegex.test(mobile)) {
+      errors.push('الرجاء إدخال رقم جوال صحيح مكون من 10 أرقام ويبدأ بـ 05.');
   }
-  
-  // Add an event listener to the form
-  document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    if (validateForm()) {
-      // If the form is valid, submit it (you can add backend logic here)
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email && !emailRegex.test(email)) {
+      errors.push('الرجاء إدخال بريد إلكتروني صحيح.');
+  }
+
+  // عرض الأخطاء في البوب أوفر
+  const errorBox = document.getElementById('form-errors');
+  if (errors.length > 0) {
+      errorBox.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
+      errorBox.style.display = 'block';
+      return false; // منع الإرسال
+  } else {
+      errorBox.style.display = 'none'; // أخفي التنبيه
+  }
+
+  // If all is good, show success message
+  showSuccessMessage();
+  return true;
+}
+
+// Function to show success message
+function showSuccessMessage() {
+  alert('تم إرسال النموذج بنجاح!');
+}
+
+// Add an event listener to the form
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  if (validateForm()) {
       console.log('تم إرسال النموذج بنجاح!');
-      // Simulate a backend submission delay
       setTimeout(() => {
-        alert('شكرًا لتواصلك معنا!');
+          alert('شكرًا لتواصلك معنا!');
       }, 1000);
-    }
-  });
+  }
+});

@@ -1,170 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
 body {
-    font-family: 'Amiri', serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.8;
-    color: #333;
-    background-color: #f5f5f5;
-    text-align: right; /* Right-align text for RTL */
-    direction: rtl; /* Right-to-left direction */
+  transition: background-image 0.5s ease;
+  font-family: "Amiri", serif;
+  color: #2d2b2a;
+  background-color: rgb(237, 230, 221);
+}
+
+*main-container{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(https://unsplash.it/1920/1080?image=871) fixed;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.contact-container.reverse{
+  flex-direction: row-reverse;
+}
+
+
+
+
+.left-col {
+  width: 50%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: background-image 0.5s ease, transform 0.5s ease;
+  background-image: url(../Media/Alula.jpeg);
+}
+
+
+
+
+
+.right-col {
+  width: 50%;
+  padding: 5rem 3rem;
+  text-align: right;
+  transition: transform 0.5s ease;
+}
+
+h2, label, button, select {
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2d2b2a;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+p {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.image-decoration {
+  position: relative;
+  width: 100%; 
+  z-index: 1; 
+  border-radius: 8px;
+  padding-bottom: 15px;
+}
+
+.responsive-image {
+  width: 100%; 
+  height: auto;
+  display: block; 
+  border-radius: 8px;
+}
+
+#form-errors{
+  display: none; 
+  background-color: #f8d7da; 
+  color: #721c24; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid #f5c6cb; 
+  border-radius: 5px; 
+  text-align: right; 
+  font-family: 'Amiri', serif; 
+  font-size: 0.85rem;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 8px;
+  background: rgb(237, 230, 221);
+  font-family: 'Amiri', serif;
+  font-size: 0.7rem;
+  outline: none;
+  color: #2d2b2a;
+  text-align: right;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #010712;
+}
+
+textarea {
+  resize: none;
+}
+
+
+
+
+
+.gender-options {
+  display: flex;
+  gap: 20px;
+}
+
+.gender-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 7px 21px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.gender-label input {
+  display: none;
+}
+
+.gender-label span {
+  pointer-events: none;
+}
+
+.gender-label:has(input:checked) {
+  background-color: #38a5b6;
+  color: white;
+  border-color: #333;
+  transform: scale(1.05);
+}
+
+.gender-label:hover {
+  background-color: #ddd;
+}
+
+button {
+  background: #38a5b6;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 1.2rem;
+  font-family: 'Amiri', serif;
+  text-align: center;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.button-icon{
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  transition: width 0.3s, height 0.3s;
+}
+
+.submit-button:active{
+  animation: move-left 0.3s forwards;
+  background-color: #d4af37;
+}
+
+.submit-button:hover {
+  background: #d4af37;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
   }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  100% {
+    transform: translateX(-20px); /
   }
-  
-  /* Header Styles */
-  header {
-    background: #2c5f2d;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 5px solid #d4af37;
+}
+
+@media (max-width: 768px) {
+  .submit-button {
+    font-size: 1.1rem; 
   }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  .button-icon {
+    width: 25px; 
+    height: 25px;
   }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    text-align: center;
+}
+
+#error, #success-msg {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #818386;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+}
+
+@media (max-width: 950px) {
+  .contact-container {
+    flex-direction: column;
+    padding-top: 20px;
   }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #d4af37;
-  }
-  
-  /* Contact Form Styles */
-  .contact-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact-form h2 {
-    margin-top: 0;
-    font-size: 2rem;
-    color: #2c5f2d;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #2c5f2d;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="tel"],
-  .form-group input[type="email"],
-  .form-group input[type="date"],
-  .form-group select,
-  .form-group textarea {
+
+  .left-col {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #d4af37;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: 'Amiri', serif;
-    background-color: #f9f9f9;
+    height: 20vh;
+    margin-top: 4rem;
   }
-  
-  .form-group textarea {
-    resize: vertical;
+
+  .right-col {
+    width: 100%;
+    padding: 2rem;
+    height: auto;
   }
-  
-  .gender-options {
-    display: flex;
-    gap: 15px;
+
+  form {
+    width: 100%;
   }
-  
-  .gender-options label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+
+  h2 {
+    font-size: 1.5rem;
   }
-  
-  button {
-    background: #2c5f2d;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Amiri', serif;
-    transition: background 0.3s ease;
-  }
-  
-  button:hover {
-    background: #d4af37;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background: #2c5f2d;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    border-top: 5px solid #d4af37;
-  }
-  
-  footer p {
-    margin: 0;
+
+  input, textarea, button, select {
     font-size: 0.9rem;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    nav ul li {
-      display: block;
-      margin: 10px 0;
-    }
-  
-    .contact-form {
-      padding: 15px;
-    }
-  
-    .form-group input[type="text"],
-    .form-group input[type="tel"],
-    .form-group input[type="email"],
-    .form-group input[type="date"],
-    .form-group select,
-    .form-group textarea {
-      font-size: 0.9rem;
-    }
-  
-    button {
-      width: 100%;
-      padding: 12px;
-    }
+  .gender-options {
+    justify-content: center;
   }
+}
+
+@media(max-width: 768){
+  .contact-container{
+    flex-wrap: row;
+    height: auto;
+  }
+
+  .left-col{
+    display: none;
+  }
+
+  .right-col{
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+}
+
+
+
+
+
+/*من هنا حطيت كود css 
+الي اخذته من ريناد حق الفوتر والهيدر*/
+
+/* Navbar Styling */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.811);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.logo {
+  order: 3;
+}
+
+.logo img {
+  width: 140px;
+  border-radius: 15px;
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+  order: 1;
+}
+
+.login-btn button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn button:hover {
+  background-color: #ddd;
+}
+
+/* قائمة الروابط */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  order: 2;
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* برغر منيو */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
+  .login-btn {
+    display: none;
+  }
+
+  .nav-links::before {
+    content: "تسجيل الدخول";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+/* فوتر */
+
+.footerimg {
+  margin-top: 2rem;
+}
+.footer {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #38a5b6;
+}
+
+.footer-bottom p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #747272;
+
+  text-align: center;
+}

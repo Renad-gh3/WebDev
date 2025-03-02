@@ -1,220 +1,122 @@
-// posting.js
-
 // Function to validate the form
 function validateForm() {
   const title = document.getElementById('title').value.trim();
-  const author = document.getElementById('author').value.trim();
   const content = document.getElementById('content').value.trim();
-  const image = document.getElementById('image').value;
-  
-  // Check if title, author, and content are filled
-  if (title === '' || author === '' || content === '') {
-    alert('Please fill in all required fields: Title, Author, and Content.');
-      return false; // Prevent form submission
-  }
-  
-  // Check if an image is uploaded (optional)
-  if (image === '') {
-    const confirmUpload = confirm('No image uploaded. Do you want to continue without an image?');
-    if (!confirmUpload) {
-      return false; // Prevent form submission
-    }
-  }
-  
-  // If everything is valid, show a success message
-  showSuccessMessage();
-  return true; // Allow form submission
-}
-  
-// Function to change the background based on the selected city
-function changeBackground(city) {
-  const body = document.getElementById('city-background');
-  let imageUrl = '';
-  
-  switch (city) {
-    case 'الرياض':
-      imageUrl = 'Frontend\Media\Riyadh.jpg';
-      break;
-    case 'جدة':
-      imageUrl = 'Frontend\Media\Jeddah.jpg';
-      break;
-    case 'مكة المكرمة':
-      imageUrl = 'Frontend\Media\Makkah.webp';
-      break;
-    case 'الطائف':
-      imageUrl = 'Frontend\Media\Taif.webp';
-      break;
-    case 'الباحة':
-      imageUrl = 'Frontend\Media\Al Baha.jpg';
-      break;
-    case 'حائل':
-      imageUrl = 'Frontend\Media\Hail.jpg';
-      break;  
-    case 'العلا':
-      imageUrl = 'Frontend\Media\AlUla.jpg';
-      break;
-    case 'ينبع':
-      imageUrl = 'Frontend\Media\Yanbu.webp';
-      break;
-    case 'القصيم':
-      imageUrl = 'Frontend\Media\Qassim.jpg';
-      break;
-    case 'نجران':
-      imageUrl = 'Frontend\Media\Najran.webp';
-      break;
-    case 'عسير':
-      imageUrl = 'Frontend\Media\Aseer.webp';
-      break;
-    case 'الجبيل':
-      imageUrl = 'Frontend\Media\Al Jubail.avif';
-      break;
-    case 'جازان':
-      imageUrl = 'Frontend\Media\Jazan.jpg';
-      break;
-    case 'تبوك':
-      imageUrl = 'Frontend\Media\Tabuk.jpg';
-      break;
-    default:
-      imageUrl = 'Frontend\Media\Saudi.jpg'; 
-  }
-  
-  body.style.backgroundImage = `url(${imageUrl})`;
-}
- 
+  const city = document.getElementById('city').value;
+  const date = document.querySelector('input[type="date"]').value;
+  const files = document.getElementById('fileInput').files;
 
-// Add an event listener to the city dropdown
-document.getElementById('city').addEventListener('change', function (event) {
-  const selectedCity = event.target.value;
-  changeBackground(selectedCity);
-});
+  let errors = [];
+
+  if (title === '') errors.push('الرجاء إدخال عنوان السرد');
+  if (content === '') errors.push('الرجاء إدخال محتوى السرد');
+  if (city === '') errors.push('الرجاء اختيار المدينة');
+  if (date === '') errors.push('الرجاء إدخال التاريخ');
+
+  if (files.length === 0) {
+      const confirmUpload = confirm('لم تقم برفع أي صورة، هل تريد الاستمرار بدون صور؟');
+      if (!confirmUpload) return false;
+  }
+
+  if (errors.length > 0) {
+      alert(errors.join('\n'));
+      return false;
+  }
+
+  showSuccessMessage();
+  return true;
+}
+
 // Function to display a success message
 function showSuccessMessage() {
   const form = document.getElementById('blogForm');
   const successMessage = document.createElement('div');
   successMessage.textContent = 'تم نشر سردك بنجاح!';
-  successMessage.style.color = '#2c5f2d'; // Dark green
+  successMessage.style.color = '#2c5f2d';
   successMessage.style.fontWeight = 'bold';
   successMessage.style.marginTop = '20px';
   successMessage.style.textAlign = 'center';
+  successMessage.style.animation = 'fadeIn 0.5s ease-in-out';
+
   form.appendChild(successMessage);
-  
-  // Clear the form after submission
+
   setTimeout(() => {
-    form.reset();
-    successMessage.remove();
-  }, 3000); // Remove the message after 3 seconds
+      form.reset();
+      successMessage.style.animation = 'fadeOut 0.5s ease-in-out';
+      setTimeout(() => successMessage.remove(), 500);
+  }, 3000);
 }
-  
-// Add an event listener to the form
+
+// Attach event listener to form
 document.getElementById('blogForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
   if (validateForm()) {
-    // If the form is valid, submit it (you can add backend logic here)
-    console.log('Form submitted successfully!');
-    // Simulate a backend submission delay
-    setTimeout(() => {
-      alert('تم نشر السرد بنجاح');
-    }, 1000);
+      console.log('Form submitted successfully!');
+      setTimeout(() => {
+          alert('تم نشر السرد بنجاح');
+      }, 1000);
   }
 });
 
-// Design tiré du site flatuicolors.com
+// Custom Select Handling (if you want to keep it)
+$(document).ready(function() {
+  const countOption = $('.old-select option').length;
 
-$(document).ready(function(){
-    
-  var countOption = $('.old-select option').size();
-  
-  function openSelect(){
-      var heightSelect = $('.new-select').height();
-      var j=1;
-      $('.new-select .new-option').each(function(){
+  function openSelect() {
+      const heightSelect = $('.new-select').height();
+      let j = 1;
+      $('.new-select .new-option').each(function() {
           $(this).addClass('reveal');
           $(this).css({
-              'box-shadow':'0 1px 1px rgba(0,0,0,0.1)',
-              'left':'0',
-              'right':'0',
-              'top': j*(heightSelect+1)+'px'
+              'box-shadow': '0 1px 1px rgba(0,0,0,0.1)',
+              'left': '0',
+              'right': '0',
+              'top': j * (heightSelect + 1) + 'px'
           });
           j++;
       });
   }
-  
-  function closeSelect(){
-      var i=0;
-      $('.new-select .new-option').each(function(){
-          $(this).removeClass('reveal');
-          if(i<countOption-3){
-              $(this).css('top',0);
-              $(this).css('box-shadow','none');
-          }
-          else if(i===countOption-3){
-              $(this).css('top','3px');
-          }
-          else if(i===countOption-2){
-              $(this).css({
-                  'top':'7px',
-                  'left':'2px',
-                  'right':'2px'
-              });
-          }
-          else if(i===countOption-1){
-              $(this).css({
-                  'top':'11px',
-                  'left':'4px',
-                  'right':'4px'
-              });
-          }
-          i++;
+
+  function closeSelect() {
+      $('.new-select .new-option').removeClass('reveal').css({
+          'top': 0,
+          'box-shadow': 'none'
       });
   }
-  
-  // Initialisation
-  if($('.old-select option[selected]').size() === 1){
+
+  if ($('.old-select option[selected]').length === 1) {
       $('.selection p span').html($('.old-select option[selected]').html());
-  }
-  else{
+  } else {
       $('.selection p span').html($('.old-select option:first-child').html());
   }
-  
-  $('.old-select option').each(function(){
-      newValue = $(this).val();
-      newHTML = $(this).html();
-      $('.new-select').append('<div class="new-option" data-value="'+newValue+'"><p>'+newHTML+'</p></div>');
+
+  $('.old-select option').each(function() {
+      const newValue = $(this).val();
+      const newHTML = $(this).html();
+      $('.new-select').append(`<div class="new-option" data-value="${newValue}"><p>${newHTML}</p></div>`);
   });
-  
-  var reverseIndex = countOption;
-  $('.new-select .new-option').each(function(){
-      $(this).css('z-index',reverseIndex);
-      reverseIndex = reverseIndex-1;        
+
+  let reverseIndex = countOption;
+  $('.new-select .new-option').each(function() {
+      $(this).css('z-index', reverseIndex--);
   });
-  
+
   closeSelect();
-  
-  
-  // Ouverture / Fermeture
-  $('.selection').click(function(){
+
+  $('.selection').click(function() {
       $(this).toggleClass('open');
-      if($(this).hasClass('open')===true){openSelect();}
-      else{closeSelect();}
+      if ($(this).hasClass('open')) {
+          openSelect();
+      } else {
+          closeSelect();
+      }
   });
-  
-  
-  // Selection 
-  $('.new-option').click(function(){
-      var newValue = $(this).data('value');
-      
-      // Selection New Select
+
+  $('.new-option').click(function() {
+      const newValue = $(this).data('value');
       $('.selection p span').html($(this).find('p').html());
       $('.selection').click();
-      
-      // Selection Old Select
       $('.old-select option[selected]').removeAttr('selected');
-      $('.old-select option[value="'+newValue+'"]').attr('selected','');
-      
-      // Visuellement l'option dans le old-select ne change pas
-      // mais la value selectionnée est bien pris en compte lors 
-      // de l'envoi du formulaire. Test à l'appui.
-      
+      $(`.old-select option[value="${newValue}"]`).attr('selected', '');
   });
 });
-
