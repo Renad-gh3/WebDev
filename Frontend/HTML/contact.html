@@ -29,7 +29,7 @@
       </div>
     </nav>
 
-    <main class="main-container">
+    <main class="container">
       <div class="contact-container">
         <div class="left-col" id="left-col"></div>
         <div class="right-col">
@@ -48,17 +48,19 @@
             <label for="lastName">ادخل اسمك الأخير</label>
             <input type="text" id="lastName" name="lastName" placeholder="مثال: الحربي" required>
             
-            <label for="gender-options">اختر الجنس</label>
             <div class="gender-options">
-              <label class="gender-label">
-                <input type="radio" name="gender" value="ذكر" required>
-                <span>ذكر</span>
-              </label>
-            
-              <label class="gender-label">
-                <input type="radio" name="gender" value="أنثى" required>
-                <span>أنثى</span>
-              </label>
+              <label for="gender-options">اختر الجنس</label>
+              <div class="gender-options-warpper">
+                <label class="gender-label">
+                  <input type="radio" name="gender" value="ذكر" required>
+                    <span>ذكر</span>
+                </label>
+                            
+                <label class="gender-label">
+                  <input type="radio" name="gender" value="أنثى" required>
+                    <span>أنثى</span>
+                </label>
+              </div>
             </div>
             
             <label for="tel">ادخل رقم هاتفك</label>
@@ -79,15 +81,12 @@
             </select>
             
             <label for="message">اكتب الرسالة</label>
-            <textarea id="message" rows="6" name="message" placeholder="فضلا، اتبع الإخلاقيات والاحترام"></textarea>
+            <textarea id="message" rows="6" name="message" placeholder="فضلا، اتبع الإخلاقيات والاحترام في كتاباتك"></textarea>
               <button type="submit" id="submit">
                 <img src="../Media/post-icon-white.png" alt="post icon" class="button-icon">
                 إرسال
               </button>
-            
           </form>
-          <div id="error"></div>
-          <div id="success-msg"></div>
         </div>
       </div>
     </main>
