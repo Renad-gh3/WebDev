@@ -6,29 +6,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
-  transition: background-image 0.5s ease;
-  font-family: "Amiri", serif;
-  color: #2d2b2a;
   background-color: rgb(237, 230, 221);
+  font-family: "Amiri", serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background-image 0.5s ease;
 }
 
-*container{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(https://unsplash.it/1920/1080?image=871) fixed;
+container{
   display: flex;
+  flex: 1;
   justify-content: center;
-  height: 100%;
-}
-
-.container {
-  margin-top: 30px;
-  text-align: right;
-  display: grid;
+  margin-top: 50px;
 }
 
 article.post-blog {
@@ -38,13 +32,12 @@ article.post-blog {
 }
 
 article.post-blog h2 {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 2rem;
   color: #2d2b2a;
   text-align: right;
   font-family: "Amiri", serif;
   margin-bottom: 40px; 
-
 }
 
 @media (max-width: 768px) {
@@ -69,6 +62,7 @@ form {
 
 ul.activities-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   list-style: none;
   width: 100%;
@@ -78,7 +72,7 @@ ul.activities-container {
 ul.activities-container li {
   display: flex;
   justify-content: center;
-  flex: 0 1 calc(20% - 15px);
+  flex: auto;
   min-width: 120px;
 }
 
@@ -109,13 +103,13 @@ ul.activities-container li input[type="checkbox"] {
 
 @media (max-width: 768px) {
   ul.activities-container li {
-      flex: 0 1 calc(33.33% - 15px);
+      flex: 1 1 calc(33.33% - 15px);
   }
 }
 
 @media (max-width: 480px) {
   ul.activities-container li {
-      flex: 0 1 calc(50% - 15px); 
+      flex: 1 1 calc(50% - 15px); 
   }
 }
 
@@ -133,60 +127,77 @@ ul.activities-container li input[type="checkbox"] {
 .date-city-title {
   display: flex;
   flex-wrap: wrap; 
-  gap: 20px; 
+  gap: 25px; 
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .date-city-warpper{
-  justify-self:center;
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  width: 40%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 .date-city-warpper input[type="date"],
 .date-city-warpper select {
   flex: 1; 
-  padding: 12px;
-  font-size: 18px;
-  border-radius: 8px;
+  max-width: 48%;
+  min-width: 48%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
   border: 2px solid #38a5b6;
   text-align: center;
   background-color: #f9f9f9;
   font-family: "Amiri", serif;
-  height: 58px;
+  height: 50px;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
 
-.date-city-title input[type="date"]{
-  min-width: 180px;
-  max-width: 250px;
-}
-
+.date-city-title input[type="date"],
 .date-city-title select{
-  min-width: 120px;
-  max-width: 180px;
+  min-width: unset;
+  max-width: unset;
 }
 
 .date-city-title input[type="text"] {
   flex: 2.5; 
-  min-width: 150px;
-  max-width: 770px;
+  min-width: 130px;
+  max-width: 800px;
   padding: 12px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   border: 2px solid #d4af37;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: #f9f9f9;
   color: #555;
   text-align: right;
   height: 58px;
   font-family: "Amiri", serif;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+@media (max-width: 992px) {
+  .date-city-warpper {
+    width: 45%;
+  }
 }
 
 @media (max-width: 768px) {
   .date-city-title {
     flex-direction: column-reverse; 
+    gap: 15px;
+  }
+
+  .date-city-warpper{
+    width: 100%;
+    gap: 10px;
   }
 
   .date-city-title input[type="text"]{
@@ -194,25 +205,46 @@ ul.activities-container li input[type="checkbox"] {
     width: 100%;
     max-width: 100%;
     font-size: 1.3rem;
-    align-self: self-end;
     height: 50px;
-  }
-
-  .date-city-title .date-city-warpper{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-between;
   }
 
   .date-city-title  input[type="date"],
   .date-city-title select {
     flex: 1;
-    max-width: 45%;
-    font-size: 17px;
-    padding: 10px;
-    border-radius: 10px; 
-    height: 50px;
+    max-width: 48%;
+    font-size: 1rem;
+    padding: 8px;
+    height: 48px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .date-city-title {
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .date-city-title input[type="text"] {
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 10px;
+      box-sizing: border-box;
+      height: 50px;
+  }
+
+  .date-city-warpper {
+      width: 100%;
+      justify-content: space-between;
+  }
+
+  .date-city-title select,
+  .date-city-title input[type="date"]{
+      width: 48%; 
+      height: 45px;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 8px;
   }
 }
 
@@ -233,6 +265,7 @@ ul.activities-container li input[type="checkbox"] {
   gap: 15px; 
   width: 100%;
   flex-wrap: wrap;
+  
 }
 
 .textarea-wrapper{
@@ -241,8 +274,10 @@ ul.activities-container li input[type="checkbox"] {
   align-items: center;
   width: 100%;
   flex: 2;
-  min-width: 300px;
   position: relative;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 300px;
 }
 
 textarea {
@@ -259,7 +294,16 @@ textarea {
   box-sizing: border-box; 
   overflow: auto; 
   resize: vertical; 
-  text-align: right
+  text-align: right;
+  direction: rtl;
+}
+
+
+.preview-image {
+  max-width: 300px;
+  height: auto; 
+  box-sizing: border-box;
+  margin-top: 50px
 }
 
 .file-upload-container {
@@ -377,16 +421,34 @@ textarea {
   }
 }
 
-@media (max-width: 480px) {
-  textarea {
-    height: 200px; 
-    font-size: 1rem;  }
+@media (max-width: 375px) {
+  .textarea-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  textarea {
+    height: 200px;
+    font-size: 1.2rem;
+    width: 100%; 
+    padding: 12px; 
+    box-sizing: border-box;
+    text-align: right; 
+    direction: rtl;
+  }
+
+  .file-upload-container {
+    width: 100%; 
+  }
+
+  .file-upload p {
+    font-size: 12px;
+  }
 }
 
 
 
-/* Submit Button Styles */
+
 .submit-button {
   background: #38a5b6;
   color: #fff;
@@ -431,6 +493,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  
   .submit-button {
     font-size: 1.1rem; 
   }
@@ -534,7 +597,7 @@ nav {
 }
 
 /* Responsive Navbar */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .burger {
     display: flex;
   }
@@ -574,15 +637,24 @@ nav {
   }
 }
 
-/* فوتر */
 
+
+
+
+
+
+/* فوتر */
 .footerimg {
-  margin-top: 8rem;
+  margin-top: 0 auto 0 auto;
+  display: block;
+  padding: 0;
+  width: 100%;
 }
+
 .footer {
   background-color: #2e2e2e;
   color: #fff;
-  padding: 20px 0;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -624,6 +696,5 @@ nav {
   margin-top: 20px;
   font-size: 14px;
   color: #747272;
-
   text-align: center;
 }

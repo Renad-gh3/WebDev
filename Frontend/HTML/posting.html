@@ -32,7 +32,7 @@
     <main class="container">
       <article class="post-blog">
         
-        <h2>كتابة سرد جديد</h2>
+        <h2>كتابة سرد جديد ✒️</h2>
         <form id="blogForm" action="/submit-blog" method="POST" enctype="multipart/form-data">
 
           <div class="Activities">
@@ -105,6 +105,7 @@
             <input type="text" id="title" name="title" placeholder="عنوان مَسردك" required >
           </div>
 
+          
           <div class="content-container">
             <div class="textarea-wrapper">
               <textarea id="content" name="content" rows="10" placeholder="محتوى مَسردك" required ></textarea>
@@ -114,21 +115,25 @@
               </div>
             </div>
 
-            <div class="file-upload-container">
-              <div class="file-upload">
-                <input multiple="" class="file-input" id="fileInput" type="file" >
-                <label class="file-label" for="fileInput">
-                  <i class="upload-icon">📁</i>
-                  <p>اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك</p>
-                </label>
+
+            <div class="side-container">
+              <div class="file-upload-container">
+                <div class="file-upload">
+                  <input multiple="" class="file-input" id="fileInput" type="file" >
+                  <label class="file-label" for="fileInput">
+                    <i class="upload-icon">📁</i>
+                    <p>اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك</p>
+                  </label>
+                </div>
               </div>
+              <img src="../Media/Saudi-Zakhrafa.png" alt="صورة زخارف منطاق السعودية" class="preview-image">
             </div>
           </div>
 
           <!-- Submit Button -->
           <button type="submit" class="submit-button">
             <img src="../Media/post-icon-white.png" alt="post icon" class="button-icon">
-            انشر سردك وابداعك
+            اسرد ابداعك
           </button>
         </form>
       </article>
