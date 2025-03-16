@@ -58,25 +58,6 @@ document.getElementById('blogForm').addEventListener('submit', function (event) 
   }
 });
 
-// Custom Select Handling (if you want to keep it)
-$(document).ready(function() {
-  const countOption = $('.old-select option').length;
-
-  function openSelect() {
-      const heightSelect = $('.new-select').height();
-      let j = 1;
-      $('.new-select .new-option').each(function() {
-          $(this).addClass('reveal');
-          $(this).css({
-              'box-shadow': '0 1px 1px rgba(0,0,0,0.1)',
-              'left': '0',
-              'right': '0',
-              'top': j * (heightSelect + 1) + 'px'
-          });
-          j++;
-      });
-  }
-
   function closeSelect() {
       $('.new-select .new-option').removeClass('reveal').css({
           'top': 0,
