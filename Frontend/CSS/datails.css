@@ -294,67 +294,59 @@
   /***********************************************FINISHING CONTENT*************************************************/
 
   /* فوتر */
-  .footerimg {
-    margin-top: auto;
-    width: 100%;
-    height: auto;
-    background-color: #2e2e2e;
-    display: block; /* تأكد من أن الصورة تأخذ العرض الكامل */
-    margin: 0; /* إزالة أي هوامش */
-    padding: 0;
-    
-  }
 
-  .footer {
-    background-color: #2e2e2e;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
-    margin-top: auto;
-    
-  }
+.footerimg {
+  margin-top: 8rem;
+}
+.footer {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
 
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-  .footer-logo img {
-    width: 100px;
-    height: auto;
-  }
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
 
-  .footer-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-  }
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
 
-  .footer-links li {
-    display: inline;
-  }
+.footer-links li {
+  display: inline;
+}
 
-  .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-  .footer-links a:hover {
-    color: #38a5b6;
-  }
+.footer-links a:hover {
+  color: #38a5b6;
+}
 
-  .footer-bottom p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #747272;
-    text-align: center;
-  }
+.footer-bottom p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #747272;
+
+  text-align: center;
+}
+
 
   /***********************************************MEDIA QUERIES*************************************************/
 
