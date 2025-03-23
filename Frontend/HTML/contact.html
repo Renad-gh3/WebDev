@@ -14,10 +14,10 @@
         <img id="logo" src="../Media/masrad.PNG" alt="logo">
       </div>
       <ul class="nav-links">
-        <li><a href="">الأخبار</a></li>
-        <li><a href="">من نحن</a></li>
-        <li><a href="">تواصل معنا</a></li>
-        <li><a href="">الصفحة الرئيسية</a></li>
+        <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
+        <li><a href="../HTML/posting.html">بدء السرد</a></li>
+        <li><a href="../HTML/aboutUs.html">من نحن</a></li>
+        <li><a href="../HTML/contact.html">تواصل معنا</a></li>
       </ul>
       <div class="login-btn">
         <button>تسجيل الدخول</button>
@@ -33,14 +33,12 @@
       <div class="contact-container">
         <div class="left-col" id="left-col"></div>
         <div class="right-col">
-          <h2>تواصل معنا</h2>
-          <p>لا تتردد في محاولة الوصول إلينا والتواصل معنا لسرد جميع ما يجول ببالك</p>
+          <h2>تواصل معنا ولا تتردد في محاولة الوصول إلينا</h2>
           <div class="image-decoration">
             <img src="../Media/footer.png" alt="زخرفة عربية رمادية اللون" class="responsive-image" >
           </div>
 
-          <div class="form-errors" id="form-errors"></div>
-
+          <div id="errorBox"></div>
           <form id="contact-form" action="/submit-contact" method="POST">
             <label for="firstName">ادخل اسمك الأول</label>
             <input type="text" id="firstName" name="firstName" placeholder="مثال: محمد" required>
@@ -52,12 +50,12 @@
               <label class="gender-options">اختر الجنس</label>
               <div class="gender-options-warpper">
                 <label class="gender-label">
-                  <input type="radio" name="gender" value="ذكر" required>
+                  <input type="radio" name="gender" value="ذكر" >
                     <span>ذكر</span>
                 </label>
                             
                 <label class="gender-label">
-                  <input type="radio" name="gender" value="أنثى" required>
+                  <input type="radio" name="gender" value="أنثى" >
                     <span>أنثى</span>
                 </label>
               </div>
@@ -81,7 +79,7 @@
             </select>
             
             <label for="message">اكتب الرسالة</label>
-            <textarea id="message" rows="6" name="message" placeholder="فضلا، اتبع الإخلاقيات والاحترام في كتاباتك"></textarea>
+            <textarea id="message" rows="6" name="message" placeholder="فضلا، اتبع الإخلاقيات والاحترام في كتاباتك" required></textarea>
               <button type="submit" id="submit">
                 <img src="../Media/post-icon-white.png" alt="post icon" class="button-icon">
                 إرسال
