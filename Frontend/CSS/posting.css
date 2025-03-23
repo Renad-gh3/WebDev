@@ -50,7 +50,22 @@ article.post-blog h2 {
   }
 }
 
-
+#errorBox{
+  display: none; 
+  position: fixed;
+  top: 100px;
+  left: 45px;
+  background-color: #F24464;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 5px;
+  box-Shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-Weight: bold;
+  z-index: 1000;
+  opacity: 1;
+  font-size: 18px; 
+  transition: opacity 0.5s ease-in-out;
+}
 
 form {
   display: flex;

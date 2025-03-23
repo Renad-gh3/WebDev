@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مسرد للسفر - اسرد سفرتك</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../CSS/posting.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   </head>
@@ -14,10 +15,10 @@
         <img id="logo" src="../Media/masrad.PNG" alt="logo">
       </div>
       <ul class="nav-links">
-        <li><a href="">الأخبار</a></li>
-        <li><a href="">من نحن</a></li>
-        <li><a href="">تواصل معنا</a></li>
-        <li><a href="">الصفحة الرئيسية</a></li>
+        <li><a href="../HTML/posting.html">بدء السرد</a></li>
+        <li><a href="../HTML/aboutUs.html">من نحن</a></li>
+        <li><a href="../HTML/contact.html">تواصل معنا</a></li>
+        <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
       </ul>
       <div class="login-btn">
         <button>تسجيل الدخول</button>
@@ -33,40 +34,30 @@
       <article class="post-blog">
         
         <h2>كتابة سرد جديد ✒️</h2>
+        <div id="errorBox"></div>
         <form id="blogForm" action="/submit-blog" method="POST" enctype="multipart/form-data">
 
           <div class="Activities">
             <ul class="activities-container">
               <li>
-                <input type="checkbox" id="checkboxOne" value="طبيعة"><label
-                  for="checkboxOne"
-                  >طبيعة</label>
+                <input type="checkbox" id="checkboxOne" value="طبيعة" name="activity"><label for="checkboxOne">طبيعة</label>
               </li>
               <li>
-                <input type="checkbox" id="checkboxTwo" value="تاريخي"><label
-                  for="checkboxTwo"
-                  >تاريخي</label>
+                <input type="checkbox" id="checkboxTwo" value="تاريخي" name="activity"><label for="checkboxTwo">تاريخي</label>
               </li>
               <li>
-                <input type="checkbox" id="checkboxThree" value="ثقافي"><label
-                  for="checkboxThree"
-                  >ثقافي</label>
+                <input type="checkbox" id="checkboxThree" value="ثقافي" name="activity"><label for="checkboxThree">ثقافي</label>
               </li>
               <li>
-                <input type="checkbox" id="checkboxFour" value="ترفيهي"><label
-                  for="checkboxFour"
-                  >ترفيهي</label>
+                <input type="checkbox" id="checkboxFour" value="ترفيهي" name="activity"><label for="checkboxFour">ترفيهي</label>
               </li>
               <li>
-                <input type="checkbox" id="checkboxFive" value="تعليمي"><label
-                  for="checkboxFive"
-                  >تعليمي</label>
+                <input type="checkbox" id="checkboxFive" value="تعليمي" name="activity"><label for="checkboxFive">تعليمي</label>
               </li>
               <li>
-                <input type="checkbox" id="checkboxSeven" value="علاجي"><label
-                  for="checkboxSeven"
-                  >علاجي</label>
+                <input type="checkbox" id="checkboxSeven" value="علاجي" name="activity"><label for="checkboxSeven">علاجي</label>
               </li>
+              
             </ul>
           </div>
 
@@ -96,13 +87,13 @@
                   <option value="عسير">عسير</option>
                 </select>
             </div>
-            <input type="text" id="title" name="title" placeholder="عنوان مَسردك" required >
+            <input type="text" id="title" name="title" placeholder="عنوان مَسردك" required maxlength="100" minlength="2">
           </div>
 
           
           <div class="content-container">
             <div class="textarea-wrapper">
-              <textarea id="content" name="content" rows="10" placeholder="محتوى مَسردك" required ></textarea>
+              <textarea id="content" name="content" rows="10" placeholder="محتوى مَسردك" maxlength="500" minlength="20" required ></textarea>
 
               <div class="image-decoration">
                 <img src="../Media/footer.png" alt="زخرفة عربية رمادية اللون" class="responsive-image" >
@@ -113,7 +104,7 @@
             <div class="side-container">
               <div class="file-upload-container">
                 <div class="file-upload">
-                  <input multiple="" class="file-input" id="fileInput" type="file" >
+                  <input multiple="" class="file-input" id="fileInput" type="file" accept="image/*">
                   <label class="file-label" for="fileInput">
                     <i class="upload-icon">📁</i>
                     اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك 
