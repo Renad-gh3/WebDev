@@ -5,7 +5,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
+
 
 
 body {
@@ -14,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+ 
 }
 i{
   color:black;
@@ -88,7 +91,7 @@ i:hover{
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .container {
     padding: 10px;
   }
@@ -241,6 +244,7 @@ nav {
   color: #fff;
   padding: 20px 0;
   text-align: center;
+
 }
 
 .footer-content {
@@ -285,7 +289,8 @@ nav {
 }
 @media (min-width: 576px) and (max-width: 768px) {
   .container {
-    width: 40rem;
+    width: 30rem;
+   
   }
 }
 
