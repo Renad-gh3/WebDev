@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+}
+
+#logo {
+  width: 30%;
+  height: auto;
+  
+}
+
+.signUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+ 
+}
+
+button {
+  border-radius: 10px;
+  font-size: 18px;
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
+  transition: background 0.6s;
+  align-self: center; 
+  margin-bottom: 10%;
+ 
+}
+
+button:hover {
+ background-color: #7b3376;
+}
+
+a {
+  color: #7b3376;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+.content1 {
+  text-align: center;
+  padding: 20px;
+}
+
+#element1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#element2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 15px;
+}
+
+label {
+  
+  font-size: 20px;
+  
+}
+
+input {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 320px;
+  padding: 5px;
+}
+
+
+.footerimg {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+
+
+
+@media (max-width: 576px) {
+  #logo {
+      width: 60%;
+  }
+
+  .container{
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: fit-content;
+
+  }
+
+  .signUp {
+      width: 80%;
+  }
+
+  form {
+      padding: 10px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  #logo {
+    width: 40%;
+}
+.container{
+  width: 90%
+}
+.signUp {
+  width: 90%;
+  padding: 20px;
+}
+ form {
+      padding: 10px;
+  }
+
+
+}
+
+@media (min-width: 782px) {
+  .signUp {
+    width: 50%; 
+    max-width: 450px; 
+  }
+}
+
+

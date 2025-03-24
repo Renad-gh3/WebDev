@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب</title>
+    <link rel="stylesheet" href="../CSS/signUp.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img id="logo" src="../Media/masrad.PNG" alt="logo" />
+
+        <div class="signUp">
+            <div class="content1">
+                <div id="element1">إنشاء حساب على مسرد</div>
+                <div id="element2">
+                    عندك حساب؟
+                    <a href="../HTML/logIn.html"><b>سجل الدخول بالضغط هنا</b></a>
+                </div>
+            </div>
+
+            <div class="content2">
+                <form action="/signUp" method="POST">
+                    <label for="username" >اسم المستخدم</label>
+                    <input type="text" name="username" id="username" required placeholder="الأسم " dir="rtl" />
+
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" name="password" id="password" required placeholder="كلمة المرور" dir="rtl"/>
+
+                    <button type="submit" id="button">إنشاء الحساب</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <img class="footerimg" src="../Media/saudistyle.png" />
+    <script src="../JS/validation.js"></script>
+</body>
+
+</html>
