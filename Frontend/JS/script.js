@@ -102,7 +102,29 @@ function moveSlides(n) {
 
 // عرض الشرائح الأولى عند تحميل الصفحة
 window.onload = showSlides;
+// دالة التمرير
+function setupScroll(containerClass) {
+  const containers = document.querySelectorAll(`.${containerClass}`);
 
+  containers.forEach((container) => {
+    const scrollButtons = container.querySelector(".scroll-buttons");
+    const leftArrow = container.querySelector(".left-arrow");
+    const rightArrow = container.querySelector(".right-arrow");
+
+    leftArrow.addEventListener("click", () => {
+      scrollButtons.scrollBy({ left: -200, behavior: "smooth" });
+    });
+
+    rightArrow.addEventListener("click", () => {
+      scrollButtons.scrollBy({ left: 200, behavior: "smooth" });
+    });
+  });
+}
+
+// تهيئة التمرير
+setupScroll("buttons-container");
+
+// تفعيل/تعطيل الأزرار
 document.querySelectorAll(".city-button, .event-button").forEach((button) => {
   button.addEventListener("click", function () {
     this.classList.toggle("active");

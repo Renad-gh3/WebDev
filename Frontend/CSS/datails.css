@@ -1,0 +1,476 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(237, 230, 221);
+    font-family: "Tajawal", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  /* Navbar Styling */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    z-index: 1000;
+  }
+
+  .logo {
+    order: 3;
+  }
+
+  .logo img {
+    width: 140px;
+    border-radius: 15px;
+  }
+
+  /* زر تسجيل الدخول */
+  .login-btn {
+    order: 1;
+    font-family: "Tajawal", sans-serif;
+  }
+
+  .login-btn button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .login-btn button:hover {
+    background-color: #ddd;
+  }
+
+  /* قائمة الروابط */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    order: 2;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Tajawal", sans-serif;
+    transition: 0.3s;
+  }
+
+  .nav-links li a:hover {
+    text-decoration: underline;
+  }
+
+  /* برغر منيو */
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.4s;
+  }
+
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      text-align: center;
+      display: none;
+      padding: 20px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    /* إخفاء زر تسجيل الدخول ووضعه داخل البرغر */
+    .login-btn {
+      display: none;
+    }
+
+    .nav-links::before {
+      content: "تسجيل الدخول";
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  }
+
+  /***********************************************START CONTENT*************************************************/
+
+  /* تنسيق العنوان h1 */
+  h1 {
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 90px;
+    color: #333;
+    font-size: 32px;
+  }
+
+  /* تنسيق العنوان h6 */
+  h6 {
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: #747272;
+    font-size: 16px;
+  }
+
+  /* تنسيق المقالة */
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    margin: 20px;
+  }
+
+  /* الأيقونات */
+  .fa-location-dot {
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: gray;
+  }
+
+  .fa-calendar,
+  .fa-clock {
+    color: gray;
+    margin-right: 5px;
+  }
+
+  /* تنسيق المربعات */
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+
+  .feature-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+
+  .feature-box i {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .feature-box p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* تنسيق الحاوية الرئيسية (details-box والصورة) */
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  /* تنسيق بوكس التفاصيل (details-box) */
+  .details-box {
+    width: 40%;
+    max-width: 400px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  /* تنسيق صورة التفاصيل */
+  .details-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  /* تنسيق محتوى التفاصيل */
+  .details-content p {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .details-content strong {
+    color: #38a5b6;
+  }
+
+  /* تنسيق حاوية الصورة */
+  .image-container {
+    width: 60%;
+    max-width: 700px;
+    margin-left: 80px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* تنسيق صندوق النص (text-box) */
+  .text-box {
+    width: 100%;
+    max-width: 700px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: right;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+  .text-box h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+  }
+
+  .text-box p {
+    margin: 10px 0 0 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /***********************************************FINISHING CONTENT*************************************************/
+
+  /* فوتر */
+
+.footerimg {
+  margin-top: 8rem;
+}
+.footer {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #38a5b6;
+}
+
+.footer-bottom p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #747272;
+
+  text-align: center;
+}
+
+
+  /***********************************************MEDIA QUERIES*************************************************/
+
+  /* أقل من 576px (هواتف صغيرة) */
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 24px;
+      margin-top: 80px;
+    }
+
+    h6 {
+      font-size: 14px;
+    }
+
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .details-box {
+      width: 100%;
+      max-width: none;
+      order: 3;
+      margin-top: 15px;
+      margin-left: 19px;
+    }
+
+    .image-container {
+      width: 100%;
+      margin-left: 0;
+      order: 1;
+    }
+
+    .features-container {
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    .feature-box {
+      width: 100%;
+    }
+
+    .text-box {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+  /* من 576px إلى 768px (هواتف كبيرة وأجهزة لوحية صغيرة) */
+  @media (min-width: 577px) and (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .details-box {
+      width: 80%;
+      order: 1; /* المدينة والمزايا تظهر في الأسفل */
+      margin-top: 20px;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      order:3;
+    }
+    .text-box {
+        width: 100%; /* نفس عرض الصورة */
+        max-width: 100%; /* تأكد من أنه يأخذ العرض الكامل */
+        order: 2; /* النظرة العامة تظهر بعد الصورة */
+        margin-top: 20px; /* مسافة بين الصورة والنظرة العامة */
+      }
+    
+     
+
+    .features-container {
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    .feature-box {
+      width: 100%
+    }
+  }
+
+  /* من 768px إلى 992px (أجهزة لوحية وأجهزة كمبيوتر صغيرة) */
+  @media (min-width: 768px) and (max-width: 992px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    h6 {
+      font-size: 16px;
+    }
+
+    .main-container {
+      flex-direction: row;
+    }
+
+    .details-box {
+      width: 100%;
+      height: 285px ;
+    }
+
+    .image-container {
+      width: 100%;
+    }
+
+    .features-container {
+      flex-direction: row;
+      margin-left: 8px;
+    }
+
+    .feature-box {
+      width: calc(33.33% - 10px);
+    }
+  }

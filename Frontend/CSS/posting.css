@@ -1,83 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-body {
-  margin: 0;
+
+* {
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-image 0.5s ease;
-  font-family: "Amiri", serif;
-  color: #2d2b2a;
-  line-height: 1.6;
-  background-image: url(../Media/background-posting.png);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
   background-color: rgb(237, 230, 221);
+  font-family: "Amiri", serif;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background-image 0.5s ease;
 }
 
-/* Container */
-.container {
-  padding: 30px;
-  border-radius: 10px;
-  text-align: right;
-  width: 90%; /* Make it responsive */
-  max-width: 1500px;
+container{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-/* Article Styles */
 article.post-blog {
-  padding: 15px;
+  padding: 30px 40px;
   border-radius: 8px;
   margin: 20px 0px;
 }
 
 article.post-blog h2 {
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 2rem;
   color: #2d2b2a;
   text-align: right;
-  font-family: "Tajawal", sans-serif;
+  font-family: "Amiri", serif;
+  margin-bottom: 40px; 
 }
 
-/* Form Styles */
+@media (max-width: 768px) {
+  article.post-blog h2 {
+      margin-bottom: 30px; 
+  }
+
+  article {
+      padding: 30px; 
+  }
+}
+
+#errorBox{
+  display: none; 
+  position: fixed;
+  top: 100px;
+  left: 45px;
+  background-color: #F24464;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 5px;
+  box-Shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-Weight: bold;
+  z-index: 1000;
+  opacity: 1;
+  font-size: 18px; 
+  transition: opacity 0.5s ease-in-out;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
-/* الحاوية الرئيسية */
-.Activities-date {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
-/* حاوية الأنشطة */
+
 ul.activities-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 15px;
   list-style: none;
-  padding: 0;
-  width: auto;
+  width: 100%;
+  justify-content: flex-start;
 }
 
-/* زر اختيار النشاط */
 ul.activities-container li {
   display: flex;
   justify-content: center;
+  flex: auto;
+  min-width: 120px;
 }
 
-/* تنسيق العناوين */
 ul.activities-container li label {
   display: block;
   text-align: center;
@@ -85,147 +98,233 @@ ul.activities-container li label {
   border: 2px solid rgba(139, 139, 139, 0.3);
   color: #555;
   border-radius: 12px;
-  padding: 12px 30px;
+  padding: 12px 28px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   width: 100%;
 }
 
-/* التأثير عند التحديد */
 ul.activities-container li input[type="checkbox"]:checked + label {
   border: 2px solid #ede6de;
   background-color: #38a5b6;
   color: white;
 }
 
-/* إخفاء الـ Checkbox */
 ul.activities-container li input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
 
-/* ترتيب العناصر الرئيسية */
-.date-picker,
-.city-container,
-.title-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+@media (max-width: 768px) {
+  ul.activities-container li {
+      flex: 1 1 calc(33.33% - 15px);
+  }
 }
 
-/* تنسيق التاريخ */
-input[type="date"] {
+@media (max-width: 480px) {
+  ul.activities-container li {
+      flex: 1 1 calc(50% - 15px); 
+  }
+}
+
+
+
+
+.sado-partal img{
   width: 100%;
-  max-width: 250px;
-  min-width: 150px;
-  background-color: #f9f9f9;
+}
+
+
+
+
+
+.date-city-title {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 25px; 
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.date-city-warpper{
+  display: flex;
+  gap: 8px;
+  width: 40%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.date-city-warpper input[type="date"],
+.date-city-warpper select {
+  flex: 1; 
+  max-width: 48%;
+  min-width: 48%;
   padding: 10px;
-  font-size: 16px;
-  border-radius: 12px;
+  font-size: 1.2rem;
+  border-radius: 10px;
   border: 2px solid #38a5b6;
   text-align: center;
-  cursor: pointer;
+  background-color: #f9f9f9;
+  font-family: "Amiri", serif;
+  height: 50px;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
 
-/* صندوق اختيار المدينة */
-#city {
-  padding: 10px;
-  border: 2px solid #2d2b2a;
-  border-radius: 12px;
+.date-city-title input[type="date"],
+.date-city-title select{
+  min-width: unset;
+  max-width: unset;
+}
+
+.date-city-title input[type="text"] {
+  flex: 2.5; 
+  min-width: 130px;
+  max-width: 800px;
+  padding: 12px;
   font-size: 1.3rem;
-  background-color: #38a5b6;
-  color: white;
-  width: 100%;
-  max-width: 250px;
-  min-width: 150px;
-  text-align: center;
-}
-
-/* حقل العنوان */
-#title {
-  padding: 10px;
   border: 2px solid #d4af37;
-  border-radius: 8px;
-  font-size: 1.3rem;
+  border-radius: 6px;
   background-color: #f9f9f9;
   color: #555;
-  flex-grow: 2;
-  max-width: 550px;
   text-align: right;
+  height: 58px;
+  font-family: "Amiri", serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* جعل التصميم متجاوبًا مع أحجام الشاشات المختلفة */
-@media (max-width: 1024px) {
-  .Activities-date {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .date-picker,
-  .city-container,
-  .title-container {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  #title {
-    max-width: 100%;
-  }
-
-  body {
-    background-attachment: scroll; /* إلغاء تثبيت الصورة على الشاشات الصغيرة */
+@media (max-width: 992px) {
+  .date-city-warpper {
+    width: 45%;
   }
 }
 
 @media (max-width: 768px) {
-  ul.activities-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  input[type="date"],
-  #city,
-  #title {
-    width: 100%;
+  .date-city-title {
+    flex-direction: column-reverse; 
+    gap: 15px;
   }
 
-  body {
-    background-attachment: scroll; /* إلغاء تثبيت الصورة على الشاشات الصغيرة */
+  .date-city-warpper{
+    width: 100%;
+    gap: 10px;
+  }
+
+  .date-city-title input[type="text"]{
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.3rem;
+    height: 50px;
+  }
+
+  .date-city-title  input[type="date"],
+  .date-city-title select {
+    flex: 1;
+    max-width: 48%;
+    font-size: 1rem;
+    padding: 8px;
+    height: 48px;
   }
 }
 
-/* ترتيب العناصر جنبًا إلى جنب */
+
+@media (max-width: 375px) {
+  .date-city-title {
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .date-city-title input[type="text"] {
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 10px;
+      box-sizing: border-box;
+      height: 50px;
+  }
+
+  .date-city-warpper {
+      width: 100%;
+      justify-content: space-between;
+  }
+
+  .date-city-title select,
+  .date-city-title input[type="date"]{
+      width: 48%; 
+      height: 45px;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 .content-container {
   display: flex;
-  flex-direction: row-reverse; /* لعرض مربع رفع الملفات على اليمين */
-  justify-content: space-between; /* توزيع العناصر بين اليسار واليمين */
+  flex-direction: row-reverse; 
+  justify-content: space-between; 
   align-items: flex-start;
-  gap: 15px; /* مسافة بين العناصر */
+  gap: 15px; 
   width: 100%;
-  flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد عند الضرورة */
+  flex-wrap: wrap;
+  
 }
 
-/* تكبير textarea ليكون العنصر الأكبر */
+.textarea-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 2;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 300px;
+}
+
 textarea {
   width: 100%;
-  height: 300px; /* ارتفاع كبير */
+  height: 300px;
   padding: 15px;
   border: 2px solid #d4af37;
   border-radius: 4px;
   font-size: 1.5rem;
-  font-family: "Tajawal", sans-serif;
+  font-family: "Amiri", serif;
   background-color: #f9f9f9;
   color: #555;
   margin: 0;
-  box-sizing: border-box; /* تضمين الـ padding والـ border في العرض والارتفاع */
-  overflow: auto; /* إضافة شريط تمرير عند الحاجة */
-  resize: vertical; /* السماح بتغيير الارتفاع عموديًا فقط */
+  box-sizing: border-box; 
+  overflow: auto; 
+  resize: vertical; 
+  text-align: right;
+  direction: rtl;
 }
 
-/*Start File style */
+
+.preview-image {
+  max-width: 300px;
+  height: auto; 
+  box-sizing: border-box;
+  margin-top: 50px
+}
+
 .file-upload-container {
-  flex: 1; /* يأخذ مساحة أقل */
-  min-width: 200px; /* الحد الأدنى للعرض */
-  max-width: 300px; /* أقصى عرض */
+  flex: 1; 
+  min-width: 200px;
+  max-width: 300px; 
 }
 
 .file-upload {
@@ -261,7 +360,7 @@ textarea {
 
 .file-upload p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
 }
 
@@ -270,141 +369,161 @@ textarea {
   color: white;
 }
 
-/* Media Queries للشاشات الصغيرة */
+.image-decoration {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%; 
+  text-align: center;
+  z-index: 1; 
+  border: 2px solid #d4af37;
+  border-top: none;
+  border-radius: 4px;
+}
+
+.responsive-image {
+  width: 100%; 
+  height: auto;
+  border-radius: 0 0 10px 10px; 
+  display: block; 
+  border-top: none; 
+}
+
+
 @media (max-width: 768px) {
   .content-container {
-    flex-direction: column; /* تغيير الاتجاه إلى عمودي */
-    align-items: stretch; /* جعل العناصر تمتد لعرض كامل */
+    flex-direction: column; 
+    align-items: stretch; 
   }
 
   textarea {
-    width: 100%; /* جعل الـ textarea يأخذ عرضًا كاملاً */
-    height: 250px; /* ارتفاع كبير */
-    min-width: unset; /* إزالة الحد الأدنى للعرض */
-    max-width: 100%; /* التأكد من أنه يأخذ العرض الكامل */
+    width: 100%; 
+    height: 250px; 
+    min-width: unset; 
+    max-width: 100%; 
   }
 
   .file-upload-container {
-    width: 100%; /* جعل العنصر يأخذ عرضًا كاملاً */
-    max-width: 100%; /* إزالة الحد الأقصى للعرض */
-    padding: 5px 0; /* تعديل الحشوة */
+    width: 100%; 
+    max-width: 100%;
+    padding: 5px 0; 
   }
 
   .file-upload {
-    padding: 20px; /* تقليل الحشوة */
-    height: 80px; /* جعل الارتفاع قصيرًا (شكل مستطيل) */
+    padding: 20px; 
+    height: 80px; 
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .file-label {
-    flex-direction: row; /* تغيير الاتجاه إلى أفقي */
-    gap: 10px; /* مسافة بين الأيقونة والنص */
+    flex-direction: row; 
+    gap: 10px; 
   }
 
   .upload-icon {
-    font-size: 30px; /* تقليل حجم الأيقونة */
-    margin-bottom: 0; /* إزالة الهوامش السفلية */
+    font-size: 30px; 
+    margin-bottom: 0;
   }
 
   .file-upload p {
-    font-size: 14px; /* تقليل حجم النص */
-  }
-}
-
-/*Start of image purple sado style*/
-/* تنسيق عام لـ textarea-wrapper */
-.textarea-wrapper {
-  display: flex;
-  flex-direction: column; /* ترتيب رأسي */
-  align-items: center; /* توسيط العناصر أفقياً */
-  width: max-content;
-  flex: 2; /* يأخذ معظم المساحة */
-  min-width: 300px; /* الحد الأدنى للعرض */
-  position: relative; /* لجعل الصورة تتبع textarea */
-}
-
-* تنسيق الصورة الزينة */
-/* تنسيق الصورة الزينة */
-.image-decoration {
-  position: absolute; /* وضع الصورة داخل textarea-wrapper */
-  bottom: -10px; /* وضع الصورة فوق textarea قليلاً */
-  left: 0; /* محاذاة لليسار */
-  width: 100%; /* تأخذ عرضًا كاملاً */
-  text-align: center; /* توسيط الصورة */
-  z-index: 1; /* التأكد من أن الصورة فوق textarea */
-}
-/* جعل الصورة متجاوبة */
-.responsive-image {
-  width: 100%; /* تأخذ عرضًا كاملاً */
-  height: auto; /* الحفاظ على نسبة الطول إلى العرض */
-  border-radius: 0 0 10px 10px; /* زوايا مدورة من الأسفل فقط */
-  display: block; /* تجنب الفراغات غير المرغوبة */
-  border-top: none; /* إزالة الحد العلوي */
-}
-
-/* Media Queries للشاشات الصغيرة */
-@media (max-width: 768px) {
-  .textarea-wrapper {
-    width: 100%; /* يأخذ عرضًا كاملاً */
-  }
-
-  textarea {
-    height: 250px; /* تقليل الارتفاع */
-    font-size: 1.2rem; /* تقليل حجم الخط */
+    font-size: 14px; 
   }
 
   .image-decoration {
-    bottom: -8px; /* تعديل المسافة من الأسفل */
+    bottom: -8px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
+  .textarea-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   textarea {
-    height: 200px; /* تقليل الارتفاع أكثر */
-    font-size: 1rem; /* تقليل حجم الخط أكثر */
+    height: 200px;
+    font-size: 1.2rem;
+    width: 100%; 
+    padding: 12px; 
+    box-sizing: border-box;
+    text-align: right; 
+    direction: rtl;
   }
-  body {
-    background-attachment: scroll; /* إلغاء تثبيت الصورة على الشاشات الصغيرة */
+
+  .file-upload-container {
+    width: 100%; 
+  }
+
+  .file-upload p {
+    font-size: 12px;
   }
 }
 
-/* Submit Button Styles */
+
+
+
 .submit-button {
   background: #38a5b6;
   color: #fff;
-  padding: 10px 10px; /* زيادة الحجم من الأعلى والأسفل */
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1.3rem; /* زيادة حجم الخط */
+  font-size: 1.3rem; 
   transition: background 0.3s ease;
-  width: 50%; /* جعل الزر يمتد ليأخذ كامل عرض الحاوية */
-  max-width: 500px; /* إزالة الحد الأقصى للعرض */
-  margin-left: 0; /* وضعه في الجهة اليسرى */
-  margin-right: auto;
-  margin-top: 15px;
-  display: block; /* لجعل الزر يأخذ المساحة كاملة */
-  font-family: "Tajawal", sans-serif;
+  width: 100%; 
+  max-width: 300px;
+  font-family: "Amiri", serif;
+  text-align: center;
+  display: flex;
+  justify-content:center;
+  align-items: end;
+  padding: 10px;
+}
+
+.button-icon{
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  transition: width 0.3s, height 0.3s;
+}
+
+.submit-button:active{
+  animation: move-left 0.3s forwards;
+  background-color: #d4af37;
 }
 
 .submit-button:hover {
   background: #d4af37;
 }
 
-/* تنسيق السايدبار */
-.sidebar {
-  flex: 0 0 250px; /* تحديد عرض السايدبار */
-  max-width: 250px;
-  text-align: center;
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px); 
+  }
 }
 
-.sidebar img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; /* إضافة حواف ناعمة */
+@media (max-width: 768px) {
+  
+  .submit-button {
+    font-size: 1.1rem; 
+  }
+
+  .button-icon {
+    width: 25px; 
+    height: 25px;
+  }
 }
+
+
+
+
+
+
 
 /*من هنا حطيت كود css 
 الي اخذته من ريناد حق الفوتر والهيدر*/
@@ -493,7 +612,7 @@ nav {
 }
 
 /* Responsive Navbar */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .burger {
     display: flex;
   }
@@ -533,15 +652,24 @@ nav {
   }
 }
 
-/* فوتر */
 
+
+
+
+
+
+/* فوتر */
 .footerimg {
-  margin-top: 8rem;
+  margin-top: 0 auto 0 auto;
+  display: block;
+  padding: 0;
+  width: 100%;
 }
+
 .footer {
   background-color: #2e2e2e;
   color: #fff;
-  padding: 20px 0;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -583,6 +711,5 @@ nav {
   margin-top: 20px;
   font-size: 14px;
   color: #747272;
-
   text-align: center;
 }
