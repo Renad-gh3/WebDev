@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="../CSS/style.css" >
+    <link rel="stylesheet" href="../CSS/style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
     <nav>
       <div class="logo">
-        <img id="logo" src="../Media/masrad.PNG" alt="logo">
+        <img id="logo" src="../Media/masrad.PNG" alt="logo" />
       </div>
       <ul class="nav-links">
         <li><a href="../HTML/posting.html">بدء السرد</a></li>
@@ -21,7 +22,9 @@
         <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
       </ul>
       <div class="login-btn">
-        <button onclick="window.location.href='logIn.html'">تسجيل الدخول</button>
+        <button onclick="window.location.href='logIn.html'">
+          تسجيل الدخول
+        </button>
       </div>
       <div class="burger">
         <div></div>
@@ -46,7 +49,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="../Media/بينالي.webp" alt="بينالي الفنون">
+          <img src="../Media/بينالي.webp" alt="بينالي الفنون" />
           <div class="content">
             <h2>بينالي الفنون</h2>
             <h3>
@@ -58,7 +61,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="../Media/AlUla.jpg" alt="AlUla image">
+          <img src="../Media/AlUla.jpg" alt="AlUla image" />
           <div class="content">
             <h2>هنا العُلا</h2>
             <h3>
@@ -70,7 +73,7 @@
         </div>
 
         <div class="item">
-          <img src="../Media/hero4.webp" alt="Saudi Roh">
+          <img src="../Media/hero4.webp" alt="Saudi Roh" />
           <div class="content">
             <h2>تجارب مُلهمة</h2>
             <h3>
@@ -82,7 +85,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="../Media/orcstra.jpg" alt="Saudi Orcstra">
+          <img src="../Media/orcstra.jpg" alt="Saudi Orcstra" />
           <div class="content">
             <h2>الاوركسترا السعودية</h2>
             <h3>
@@ -95,25 +98,25 @@
       </div>
       <!-- button arrows -->
       <div class="arrows">
-        <button id="prev"> &lt; </button>
-        <button id="next"> &gt; </button>
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
       </div>
       <!-- thumbnail -->
       <div class="thumbnail">
         <div class="item active">
-          <img src="../Media/welcomeKSA.jpg" alt="Welcome to KSA">
+          <img src="../Media/welcomeKSA.jpg" alt="Welcome to KSA" />
         </div>
         <div class="item">
-          <img src="../Media/بينالي.webp" alt="Benali" >
+          <img src="../Media/بينالي.webp" alt="Benali" />
         </div>
         <div class="item">
-          <img src="../Media/AlUla.jpg" alt="AlUla">
+          <img src="../Media/AlUla.jpg" alt="AlUla" />
         </div>
         <div class="item">
-          <img src="../Media/hero4.webp" alt="Saudi Roh">
+          <img src="../Media/hero4.webp" alt="Saudi Roh" />
         </div>
         <div class="item">
-          <img src="../Media/orcstra.jpg" alt="Saudi Orcstra">
+          <img src="../Media/orcstra.jpg" alt="Saudi Orcstra" />
         </div>
       </div>
     </div>
@@ -168,117 +171,26 @@
         <div class="scroll-arrow right-arrow event-arrow">›</div>
       </div>
       <!-- المدونات المنشورة -->
-      <div class="blog-grid">
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/Alula.jpeg"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="saudi style">
-          </div>
-          <div class="details">
-            <p>
-              العلا | رحلة استكشافية <i class="fa-solid fa-location-dot"></i>
-            </p>
-            <h3>عنوان المدونة هنا</h3>
+      <div class="blog-grid" id="blogGrid">
+        <!-- سيتم إضافة البطاقات ديناميكياً هنا -->
+        <!-- Skeleton Loader أثناء التحميل -->
+        <div class="skeleton-loader">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-details">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line medium"></div>
           </div>
         </div>
-
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/Aseer.webp"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="saudi Style">
-          </div>
-          <div class="details">
-            <p>عسير | مساحات خضراء <i class="fa-solid fa-location-dot"></i></p>
-            <h3>عنوان المدونة هنا</h3>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/Jeddah.jpg"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="Saudi Style">
-          </div>
-          <div class="details">
-            <p>جدة | ممشى الكورنيش <i class="fa-solid fa-location-dot"></i></p>
-            <h3>عنوان المدونة هنا</h3>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/Riyadh.jpg"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="Saudi Style">
-          </div>
-          <div class="details">
-            <p>الرياض | البوليفارد <i class="fa-solid fa-location-dot"></i></p>
-            <h3>عنوان المدونة هنا</h3>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/بينالي.webp"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="Saudi Style">
-          </div>
-          <div class="details">
-            <p>جدة | بينالي الفنون <i class="fa-solid fa-location-dot"></i></p>
-            <h3>عنوان المدونة هنا</h3>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="image-container">
-            <img
-              src="../Media/orcstra.jpg"
-              width="260"
-              height="260"
-              alt="صورة المدونة"
-            >
-            <div class="date-sticker">15 Feb 2025</div>
-            <img src="../Media/saudistyle.png" alt="Saudi Style">
-          </div>
-          <div class="details">
-            <p>
-              الشرقية | حفلات موسيقية <i class="fa-solid fa-location-dot"></i>
-            </p>
-            <h3>عنوان المدونة هنا</h3>
-          </div>
-        </div>
+        <!-- تكرر الهيكل حسب الحاجة -->
       </div>
     </div>
 
-    <img class="footerimg" src="../Media/saudistyle.png" alt="Saudi Style">
+    <img class="footerimg" src="../Media/saudistyle.png" alt="Saudi Style" />
     <footer class="footer">
       <div class="footer-content">
         <!-- الشعار -->
         <div class="footer-logo">
-          <img id="Foot-logo" src="../Media/masrad.PNG" alt="logo">
+          <img id="Foot-logo" src="../Media/masrad.PNG" alt="logo" />
         </div>
         <!-- الروابط السريعة -->
         <ul class="footer-links">

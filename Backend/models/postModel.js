@@ -36,7 +36,8 @@ const postSchema = new mongoose.Schema(
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      // وقفتها عشان الاثروتايز مايعطلني
+      // required: true,
     },
     tags: [String], // Example: ["mountains", "adventure"]
     image: { type: String, required: true }, // Store image URL or path

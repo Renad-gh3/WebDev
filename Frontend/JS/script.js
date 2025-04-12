@@ -130,3 +130,68 @@ document.querySelectorAll(".city-button, .event-button").forEach((button) => {
     this.classList.toggle("active");
   });
 });
+
+// ################################################
+document.addEventListener("DOMContentLoaded", function () {
+  // وظائف جديدة لجلب البيانات وعرضها
+  async function fetchBlogs() {
+    try {
+      const response = await fetch("http://localhost:5000/api/post");
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
+  }
+
+  function renderBlogCards(posts) {
+    const blogGrid = document.getElementById("blogGrid");
+    blogGrid.innerHTML = "";
+
+    posts.forEach((post) => {
+      const blogCard = document.createElement("div");
+      blogCard.className = "blog-card";
+
+      const date = new Date(post.createdAt).toLocaleDateString("ar-EG", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+
+      blogCard.innerHTML = `
+      <div class="image-container">
+        <img src="http://localhost:5000/${post.image}" width="260" height="260" alt="صورة المدونة">
+        <div class="date-sticker">${date}</div>
+        <img src="../Media/saudistyle.png" alt="saudi style">
+      </div>
+      <div class="details">
+        <p>${post.city} | ${post.activityType} <i class="fa-solid fa-location-dot"></i></p>
+        <h3>${post.title}</h3>
+      </div>
+    `;
+
+      blogGrid.appendChild(blogCard);
+    });
+  }
+
+  async function loadBlogs() {
+    const blogGrid = document.getElementById("blogGrid");
+
+    // عرض Skeleton أثناء التحميل
+    blogGrid.innerHTML = `
+    <div class="skeleton-loader">
+      <div class="skeleton-image"></div>
+      <div class="skeleton-details">
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line medium"></div>
+      </div>
+    </div>
+  `.repeat(4);
+
+    const posts = await fetchBlogs();
+    renderBlogCards(posts);
+  }
+
+  loadBlogs();
+});
