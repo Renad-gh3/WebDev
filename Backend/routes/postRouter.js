@@ -67,6 +67,7 @@ import multer from "multer";
 import {
   createPost,
   getAllPosts,
+  getSinglePost,
   getSuggestedPosts,
   updatePost,
   deletePost,
@@ -100,5 +101,7 @@ PostRouter.put("/:id", updatePost);
 // شلت  authMiddleware, عشانها ماتفعلت لسى ومابيها تعطل علي الشغل
 // PostRouter.delete("/:id", authMiddleware, deletePost);
 PostRouter.delete("/:id", deletePost);
+// إضافة المسار الجديد
+PostRouter.get("/:id", getSinglePost);
 
 export default PostRouter;

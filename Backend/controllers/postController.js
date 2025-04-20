@@ -1,5 +1,6 @@
 import postModel from "../models/postModel.js";
 import fs from "fs";
+import mongoose from "mongoose";
 
 // إنشاء منشور جديد
 const createPost = async (req, res) => {
@@ -84,5 +85,33 @@ const deletePost = async (req, res) => {
     res.json({ success: false, message: "ERROR" });
   }
 };
+// جلب منشور واحد حسب ID
+const getSinglePost = async (req, res) => {
+  try {
+    // التحقق من صحة ObjectId
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: "معرف غير صالح" });
+    }
 
-export { createPost, getAllPosts, getSuggestedPosts, updatePost, deletePost };
+    const post = await postModel.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({ message: "المنشور غير موجود" });
+    }
+
+    res.json(post);
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "خطأ في الخادم" });
+  }
+};
+
+// تصدير الدالة الجديدة
+export {
+  createPost,
+  getAllPosts,
+  getSinglePost,
+  getSuggestedPosts,
+  updatePost,
+  deletePost,
+};

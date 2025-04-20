@@ -153,6 +153,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const blogCard = document.createElement("div");
       blogCard.className = "blog-card";
 
+      // إضافة حدث النقر لفتح التفاصيل
+      blogCard.addEventListener("click", () => {
+        window.location.href = `details.html?id=${post._id}`;
+      });
+
       const date = new Date(post.createdAt).toLocaleDateString("ar-EG", {
         year: "numeric",
         month: "long",

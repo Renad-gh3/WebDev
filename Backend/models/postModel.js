@@ -39,13 +39,13 @@ const postSchema = new mongoose.Schema(
       // وقفتها عشان الاثروتايز مايعطلني
       // required: true,
     },
-    tags: [String], // Example: ["mountains", "adventure"]
+    tags: { type: String }, // Example: ["mountains", "adventure"]
     image: { type: String, required: true }, // Store image URL or path
     city: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
     activityType: {
       type: String,
-      enum: ["Adventure", "Natural", "Sport", "History"],
+      enum: ["مغامرات", "طبيعة", "رياضة", "تاريخي"],
       required: true,
     },
   },
