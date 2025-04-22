@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import PostRouter from "./routes/postRouter.js";
+import ContactRouter from "./routes/contactRouter.js";
 // import userRouter from "./routes/userRouter.js";
 import mongoose from "mongoose";
 import { connectDB } from "./config/db.js";
@@ -20,6 +21,7 @@ connectDB();
 // //api ndpoints
 app.use("/api/post", PostRouter); //or app.use("/api/posts", postRoutes);
 // app.use("/api/user", userRouter); //or app.use("/api/users", userRoutes);
+app.use("/api/contact", ContactRouter)
 
 app.get("/", (req, res) => {
   res.send("API WORKING");
