@@ -19,23 +19,25 @@
 
 // export default userModel;
 
-import mongoose from "mongoose";
+// ###########################################
 
-const userSchema = new mongoose.Schema(
-  {
-    username: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    role: {
-      type: String,
-      enum: ["visitor", "author"],
-      default: "visitor",
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
+// import mongoose from "mongoose";
 
-const userModel = mongoose.model("User", userSchema);
+// const userSchema = new mongoose.Schema(
+//   {
+//     username: { type: String, required: true },
+//     email: { type: String, required: true, unique: true },
+//     password: { type: String, required: true },
+//     role: {
+//       type: String,
+//       enum: ["visitor", "author"],
+//       default: "visitor",
+//       required: true,
+//     },
+//   },
+//   { timestamps: true }
+// );
 
-export default userModel;
+// const userModel = mongoose.model("User", userSchema);
+
+// export default userModel;
