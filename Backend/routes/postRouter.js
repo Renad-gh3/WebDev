@@ -89,18 +89,27 @@ const storage = multer.diskStorage({
 // Initialize `multer` for file uploads
 const upload = multer({ storage: storage });
 
+
 // API Routes
 // شلت  authMiddleware, عشانها ماتفعلت لسى ومابيها تعطل علي الشغل
 // PostRouter.post("/", authMiddleware, upload.single("image"), createPost);
 PostRouter.post("/", upload.single("image"), createPost);
+
+
 PostRouter.get("/", getAllPosts);
 PostRouter.get("/suggested", getSuggestedPosts);
+
+
 // شلت  authMiddleware, عشانها ماتفعلت لسى ومابيها تعطل علي الشغل
 // PostRouter.put("/:id", authMiddleware, updatePost);
 PostRouter.put("/:id", updatePost);
+
+
 // شلت  authMiddleware, عشانها ماتفعلت لسى ومابيها تعطل علي الشغل
 // PostRouter.delete("/:id", authMiddleware, deletePost);
 PostRouter.delete("/:id", deletePost);
+
+
 // إضافة المسار الجديد
 PostRouter.get("/:id", getSinglePost);
 
