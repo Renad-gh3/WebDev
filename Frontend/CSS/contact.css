@@ -173,7 +173,7 @@ textarea {
 }
 
 .gender-label:has(input:checked) {
-  background-color: #38a5b6;
+  background-color: #333;
   color: white;
   border-color: #333;
   transform: scale(1.05);
@@ -288,6 +288,14 @@ button:hover {
   }
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgb(218, 192, 159) !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(218, 192, 159) inset !important;
+  -webkit-text-fill-color: #2d2b2a !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 
 

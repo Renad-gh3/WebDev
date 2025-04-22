@@ -20,7 +20,7 @@
         <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
       </ul>
       <div class="login-btn">
-        <button onclick="window.location.href='logIn.html'">تسجيل الدخول</button>
+        <button onclick="window.location.href='logIn.html'">صفحتي الشخصية</button>
       </div>
       <div class="burger">
         <div></div>
@@ -39,7 +39,7 @@
           </div>
 
           <div id="errorBox"></div>
-          <form id="contact-form" action="/submit-contact" method="POST">
+          <form id="contact-form" action="http://localhost:5000/api/contact" method="POST">
             <label for="firstName">ادخل اسمك الأول</label>
             <input type="text" id="firstName" name="firstName" placeholder="مثال: محمد" required>
             
@@ -73,7 +73,7 @@
             <label for="language">اختبر اللغة المفضلة</label>
             <select id="language" name="language" required>
               <option value="" disabled selected>اختر اللغة</option>
-              <option value="العربية">العربية - العربية</option>
+              <option value="العربية">العربية</option>
               <option value="الإنجليزية">الإنجليزية - English</option>
               <option value="الفرنسية">الفرنسية - Français</option>
             </select>
@@ -100,10 +100,10 @@
         </div>
         <!-- الروابط السريعة -->
         <ul class="footer-links">
-          <li><a href="">الأخبار</a></li>
-          <li><a href="">من نحن</a></li>
-          <li><a href="">تواصل معنا</a></li>
-          <li><a href="">الصفحة الرئيسية</a></li>
+          <li><a href="../HTML/posting.html">بدء السرد</a></li>
+          <li><a href="../HTML/aboutUs.html">من نحن</a></li>
+          <li><a href="../HTML/contact.html">تواصل معنا</a></li>
+          <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
         </ul>
       </div>
       <div class="footer-bottom">

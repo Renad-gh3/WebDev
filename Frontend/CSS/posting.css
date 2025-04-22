@@ -105,13 +105,13 @@ ul.activities-container li label {
   width: 100%;
 }
 
-ul.activities-container li input[type="checkbox"]:checked + label {
+ul.activities-container li input[type="radio"]:checked + label {
   border: 2px solid #ede6de;
   background-color: #38a5b6;
   color: white;
 }
 
-ul.activities-container li input[type="checkbox"] {
+ul.activities-container li input[type="radio"] {
   position: absolute;
   opacity: 0;
 }

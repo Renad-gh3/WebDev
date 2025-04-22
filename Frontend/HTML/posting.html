@@ -21,7 +21,7 @@
         <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
       </ul>
       <div class="login-btn">
-        <button onclick="window.location.href='logIn.html'">تسجيل الدخول</button>
+        <button onclick="window.location.href='logIn.html'">صفحتي الشخصية</button>
       </div>
       <div class="burger">
         <div></div>
@@ -35,29 +35,16 @@
         
         <h2>كتابة سرد جديد ✒️</h2>
         <div id="errorBox"></div>
-        <form id="blogForm" action="/submit-blog" method="POST" enctype="multipart/form-data">
+        <form id="blogForm" action="/post" method="POST" enctype="multipart/form-data">
 
           <div class="Activities">
             <ul class="activities-container">
-              <li>
-                <input type="checkbox" id="checkboxOne" value="طبيعة" name="activity"><label for="checkboxOne">طبيعة</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkboxTwo" value="تاريخي" name="activity"><label for="checkboxTwo">تاريخي</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkboxThree" value="ثقافي" name="activity"><label for="checkboxThree">ثقافي</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkboxFour" value="ترفيهي" name="activity"><label for="checkboxFour">ترفيهي</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkboxFive" value="تعليمي" name="activity"><label for="checkboxFive">تعليمي</label>
-              </li>
-              <li>
-                <input type="checkbox" id="checkboxSeven" value="علاجي" name="activity"><label for="checkboxSeven">علاجي</label>
-              </li>
-              
+              <li><input type="radio" id="checkboxOne" value="طبيعة" name="activityType"><label for="checkboxOne">طبيعة</label></li>
+              <li><input type="radio" id="checkboxTwo" value="تاريخي" name="activityType"><label for="checkboxTwo">تاريخي</label></li>
+              <li><input type="radio" id="checkboxThree" value="ثقافي" name="activityType"><label for="checkboxThree">ثقافي</label></li>
+              <li><input type="radio" id="checkboxFour" value="ترفيهي" name="activityType"><label for="checkboxFour">ترفيهي</label></li>
+              <li><input type="radio" id="checkboxFive" value="تعليمي" name="activityType"><label for="checkboxFive">تعليمي</label></li>
+              <li><input type="radio" id="checkboxSeven" value="علاجي" name="activityType"><label for="checkboxSeven">علاجي</label></li>
             </ul>
           </div>
 
@@ -67,7 +54,7 @@
 
           <div class="date-city-title">
             <div class="date-city-warpper">
-              <input type="date" required>
+              <input type="date" name="date" required>
 
                 <select id="city" name="city" required>
                   <option value="" disabled selected>المدينة</option>
@@ -104,7 +91,7 @@
             <div class="side-container">
               <div class="file-upload-container">
                 <div class="file-upload">
-                  <input multiple="" class="file-input" id="fileInput" type="file" accept="image/*">
+                  <input name="image" class="file-input" id="fileInput" type="file" accept="image/*">
                   <label class="file-label" for="fileInput">
                     <i class="upload-icon">📁</i>
                     اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك 
@@ -133,10 +120,10 @@
         </div>
         <!-- الروابط السريعة -->
         <ul class="footer-links">
-          <li><a href="">الأخبار</a></li>
-          <li><a href="">من نحن</a></li>
-          <li><a href="">تواصل معنا</a></li>
-          <li><a href="">الصفحة الرئيسية</a></li>
+          <li><a href="../HTML/posting.html">بدء السرد</a></li>
+          <li><a href="../HTML/aboutUs.html">من نحن</a></li>
+          <li><a href="../HTML/contact.html">تواصل معنا</a></li>
+          <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
