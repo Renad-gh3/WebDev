@@ -14,17 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// للحذففف \\\\\\\\\\\\\\\\\\\\\\\\\\\\
-const deleteButtons = document.querySelectorAll(".delete-button");
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    const blogCard = this.closest(".blog-card");
-    if (blogCard) {
-      blogCard.remove();
-    }
-  });
-});
-
 // photo slider
 let items = document.querySelectorAll(".slider .list .item");
 let next = document.getElementById("next");
