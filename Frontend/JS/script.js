@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle("active");
   });
 
-  // إغلاق القائمة عند النقر على أي عنصر فيها
   document.querySelectorAll(".nav-links li a").forEach((link) => {
     link.addEventListener("click", function () {
       nav.classList.remove("active");
@@ -14,16 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// photo slider
 let items = document.querySelectorAll(".slider .list .item");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let thumbnails = document.querySelectorAll(".thumbnail .item");
 
-// config param
 let countItem = items.length;
 let itemActive = 0;
-// event next click
+
 next.onclick = function () {
   itemActive = itemActive + 1;
   if (itemActive >= countItem) {
@@ -31,7 +28,7 @@ next.onclick = function () {
   }
   showSlider();
 };
-//event prev click
+
 prev.onclick = function () {
   itemActive = itemActive - 1;
   if (itemActive < 0) {
@@ -39,30 +36,27 @@ prev.onclick = function () {
   }
   showSlider();
 };
-// auto run slider
+
 let refreshInterval = setInterval(() => {
   next.click();
 }, 9000);
 function showSlider() {
-  // remove item active old
+
   let itemActiveOld = document.querySelector(".slider .list .item.active");
   let thumbnailActiveOld = document.querySelector(".thumbnail .item.active");
   itemActiveOld.classList.remove("active");
   thumbnailActiveOld.classList.remove("active");
 
-  // active new item
   items[itemActive].classList.add("active");
   thumbnails[itemActive].classList.add("active");
   setPositionThumbnail();
 
-  // clear auto time run slider
   clearInterval(refreshInterval);
   refreshInterval = setInterval(() => {
     next.click();
   }, 9000);
 }
 
-// click thumbnail
 thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener("click", () => {
     itemActive = index;
@@ -81,7 +75,7 @@ function showSlides() {
   if (slideIndex < 0) {
     slideIndex = totalSlides - 1;
   }
-  slides.style.transform = `translateX(${-slideIndex * 220}px)`; // 220px هي عرض الصورة مع الهوامش
+  slides.style.transform = `translateX(${-slideIndex * 220}px)`; 
 }
 
 function moveSlides(n) {
@@ -89,9 +83,8 @@ function moveSlides(n) {
   showSlides();
 }
 
-// عرض الشرائح الأولى عند تحميل الصفحة
 window.onload = showSlides;
-// دالة التمرير
+
 function setupScroll(containerClass) {
   const containers = document.querySelectorAll(`.${containerClass}`);
 
@@ -110,19 +103,16 @@ function setupScroll(containerClass) {
   });
 }
 
-// تهيئة التمرير
 setupScroll("buttons-container");
 
-// تفعيل/تعطيل الأزرار
 document.querySelectorAll(".city-button, .event-button").forEach((button) => {
   button.addEventListener("click", function () {
     this.classList.toggle("active");
   });
 });
 
-// ################################################
 document.addEventListener("DOMContentLoaded", function () {
-  // وظائف جديدة لجلب البيانات وعرضها
+
   async function fetchBlogs() {
     try {
       const response = await fetch("http://localhost:5000/api/post");
@@ -142,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const blogCard = document.createElement("div");
       blogCard.className = "blog-card";
 
-      // إضافة حدث النقر لفتح التفاصيل
       blogCard.addEventListener("click", () => {
         window.location.href = `details.html?id=${post._id}`;
       });
@@ -172,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadBlogs() {
     const blogGrid = document.getElementById("blogGrid");
 
-    // عرض Skeleton أثناء التحميل
     blogGrid.innerHTML = `
     <div class="skeleton-loader">
       <div class="skeleton-image"></div>

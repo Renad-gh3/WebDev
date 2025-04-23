@@ -21,10 +21,8 @@ const contactSchema = new mongoose.Schema(
         author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        // وقفتها عشان الاثروتايز مايعطلني
-        // required: true,
         },
-        tags: {type: String}, // Example: ["mountains", "adventure"]
+        tags: {type: String},
         createdAt: { type: Date, default: Date.now }    
     },{ timestamps: true }
 );

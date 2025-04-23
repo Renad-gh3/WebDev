@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.classList.toggle("active");
     });
   
-    // إغلاق القائمة عند النقر على أي عنصر فيها
     document.querySelectorAll(".nav-links li a").forEach((link) => {
       link.addEventListener("click", function () {
         nav.classList.remove("active");
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  // للحذففف \\\\\\\\\\\\\\\\\\\\\\\\\\\\
   const deleteButtons = document.querySelectorAll(".delete-button");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -27,66 +25,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-  
-// ################################################
 document.addEventListener("DOMContentLoaded", function () {
-    // وظائف جديدة لجلب البيانات وعرضها
-    async function fetchBlogs() {
-      try {
-        const response = await fetch("http://localhost:5000/api/post");
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        return [];
-      }
+  async function fetchBlogs() {
+    try {
+      const response = await fetch("http://localhost:5000/api/post");
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
     }
+  }
   
-    function renderBlogCards(posts) {
-      const blogGrid = document.getElementById("blogGrid");
-      blogGrid.innerHTML = "";
+  function renderBlogCards(posts) {
+    const blogGrid = document.getElementById("blogGrid");
+    blogGrid.innerHTML = "";
   
-      posts.forEach((post) => {
-        const blogCard = document.createElement("div");
-        blogCard.className = "blog-card";
+    posts.forEach((post) => {
+      const blogCard = document.createElement("div");
+      blogCard.className = "blog-card";
 
-        // إضافة حدث النقر لفتح التفاصيل
-        blogCard.addEventListener("click", (e) => {
-            // منع الانتشار إذا تم النقر على زر الحذف
-            if (e.target.classList.contains('delete-button')) {
-              return;
-            }
-            window.location.href = `details.html?id=${post._id}`;
-          });
+      blogCard.addEventListener("click", (e) => {
+        if (e.target.classList.contains('delete-button')) {
+          return;
+        }
+        window.location.href = `details.html?id=${post._id}`;
+      });
   
-        const date = new Date(post.createdAt).toLocaleDateString("ar-EG", {
-          year: "numeric",
+      const date = new Date(post.createdAt).toLocaleDateString("ar-EG", {
+        year: "numeric",
           month: "long",
           day: "numeric",
-        });
+      });
   
-        blogCard.innerHTML = `
-        <div class="image-container">
-          <img src="http://localhost:5000/${post.image}" width="260" height="260" alt="صورة المدونة">
-          <div class="date-sticker">${date}</div>
-          <img src="../Media/saudistyle.png" alt="saudi style">
-        </div>
-        <div class="details">
-          <p>${post.city} | ${post.activityType} <i class="fa-solid fa-location-dot"></i></p>
-          <h3>${post.title}</h3>
-           <button class="delete-button" data-id="${post._id}">حذف</button>
-        </div>
-        </div>
+      blogCard.innerHTML = `
+      <div class="image-container">
+        <img src="http://localhost:5000/${post.image}" width="260" height="260" alt="صورة المدونة">
+        <div class="date-sticker">${date}</div>
+        <img src="../Media/saudistyle.png" alt="saudi style">
+      </div>
+      <div class="details">
+        <p>${post.city} | ${post.activityType} <i class="fa-solid fa-location-dot"></i></p>
+        <h3>${post.title}</h3>
+         <button class="delete-button" data-id="${post._id}">حذف</button>
+      </div>
+      </div>
       `;
   
-        blogGrid.appendChild(blogCard);
-      });
+      blogGrid.appendChild(blogCard);
+    });
 
-      
-      // تفعيل أزرار الحذف بعد عرض المنشورات
-      setupDeleteButtons();
-    }
+    setupDeleteButtons();
+  }
   
     async function loadBlogs() {
       const blogGrid = document.getElementById("blogGrid");
@@ -106,34 +96,31 @@ document.addEventListener("DOMContentLoaded", function () {
       renderBlogCards(posts);
     }
   
-      // دالة لتفعيل أزرار الحذف
-      function setupDeleteButtons() {
-        const deleteButtons = document.querySelectorAll(".delete-button");
-        deleteButtons.forEach((button) => {
-          button.addEventListener("click", async function (e) {
-            e.stopPropagation(); // منع الانتشار لمنع فتح التفاصيل
-            const postId = this.getAttribute("data-id");
-            if (confirm("هل أنت متأكد من حذف هذه المدونة؟")) {
-              try {
-                const response = await fetch(`http://localhost:5000/api/post/${postId}`, {
-                  method: "DELETE"
-                });
-                
-                if (response.ok) {
-                  this.closest(".blog-card").remove();
-                } else {
-                  alert("حدث خطأ أثناء محاولة الحذف");
-                }
-              } catch (error) {
-                console.error("Error deleting post:", error);
-                alert("حدث خطأ أثناء الاتصال بالخادم");
-              }
-            }
+    function setupDeleteButtons() {
+      const deleteButtons = document.querySelectorAll(".delete-button");
+      deleteButtons.forEach((button) => {
+        button.addEventListener("click", async function (e) {
+          e.stopPropagation(); // منع الانتشار لمنع فتح التفاصيل
+          const postId = this.getAttribute("data-id");
+          if (confirm("هل أنت متأكد من حذف هذه المدونة؟")) {
+            try {
+              const response = await fetch(`http://localhost:5000/api/post/${postId}`, {
+              method: "DELETE"
           });
-        });
-      }
-
-
-    loadBlogs();
-  });
+                
+            if (response.ok) {
+              this.closest(".blog-card").remove();
+            } else {
+              alert("حدث خطأ أثناء محاولة الحذف");
+            }
+          } catch (error) {
+              console.error("Error deleting post:", error);
+            alert("حدث خطأ أثناء الاتصال بالخادم");
+          }
+        }
+      });
+    });
+  }
+  loadBlogs();
+});
   

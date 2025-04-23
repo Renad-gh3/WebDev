@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle("active");
   });
 
-  // إغلاق القائمة عند النقر على أي عنصر فيها
   document.querySelectorAll(".nav-links li a").forEach((link) => {
     link.addEventListener("click", function () {
       nav.classList.remove("active");
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ###########################
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const post = await response.json();
 
-    // عرض البيانات
     document.getElementById("title").textContent = post.title;
     document.getElementById(
       "main-image"
@@ -40,7 +37,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("activityType").textContent = post.activityType;
     document.getElementById("content").textContent = post.content;
 
-    // تحويل التاريخ
     const date = new Date(post.createdAt).toLocaleDateString("ar-EG", {
       year: "numeric",
       month: "long",

@@ -1,5 +1,4 @@
 import postModel from "../models/postModel.js";
-import fs from "fs";
 import mongoose from "mongoose";
 
 // إنشاء منشور جديد
@@ -13,7 +12,6 @@ const createPost = async (req, res) => {
       city,
       activityType,
       image
-      // author: req.user.userId, // تم إيقافها مؤقتًا
     });
 
     await newPost.save();
@@ -58,9 +56,6 @@ const updatePost = async (req, res) => {
     const post = await postModel.findById(req.params.id);
     if (!post) return res.status(404).json({ message: "لا يوجد مسرد بهذا المعرف" });
 
-    // if (post.author.toString() !== req.user.userId)
-    //   return res.status(403).json({ message: "دخول غير مصرح به" });
-
     await postModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json({ message: "تم تحديث المسرد بنجاح!" });
   } catch (error) {
@@ -75,9 +70,6 @@ const deletePost = async (req, res) => {
     const post = await postModel.findById(req.params.id);
     if (!post) return res.json({ message: "لا يوجد مسرد بهذا المعرف" });
 
-    // if (post.author.toString() !== req.user.userId)
-    //   return res.json({ message: "دخول غير مصرح به"" });
-
     await postModel.findByIdAndDelete(req.params.id);
     res.json({ message: "تم حذف المسرد بنجاح!" });
   } catch (error) {
@@ -88,7 +80,7 @@ const deletePost = async (req, res) => {
 // جلب منشور واحد حسب ID
 const getSinglePost = async (req, res) => {
   try {
-    // التحقق من صحة ObjectId
+
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ message: "معرف غير صالح" });
     }
