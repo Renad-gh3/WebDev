@@ -1,7 +1,5 @@
 import contactModel from "../models/contactModel.js";
-
-// إنشاء منشور جديد
-const createContactReauest = async (req, res) => {
+const createContactReauest = async (req, res) => { // إنشاء منشور جديد
     try {
         const {firstName, lastName, gender, mobile, dob, email, language, message } = req.body;
 
@@ -25,9 +23,7 @@ const createContactReauest = async (req, res) => {
     }
 };
 
-
-// جلب جميع طلبات التواصل (مع الفلترة حسب اللغة والجنس)
-const getAllContactsRequests = async (req, res) => {
+const getAllContactsRequests = async (req, res) => { // جلب جميع طلبات التواصل (مع الفلترة حسب اللغة والجنس)
     try {
         const { gender, language } = req.query;
         let query = {};
