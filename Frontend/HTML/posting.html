@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مسرد للسفر - اسرد سفرتك</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../CSS/posting.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/posting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <nav>
       <div class="logo">
         <a href="../HTML/index.html">
-          <img id="logo" src="../Media/masrad.PNG" alt="Masrad-logo">
+          <img id="logo" src="../Media/masrad.PNG" alt="Masrad-logo" />
         </a>
       </div>
       <ul class="nav-links">
@@ -23,7 +26,9 @@
         <li><a href="../HTML/index.html">الصفحة الرئيسية</a></li>
       </ul>
       <div class="login-btn">
-        <button onclick="window.location.href='profile.html'"> صفحتي الشخصية</button>
+        <button onclick="window.location.href='profile.html'">
+          صفحتي الشخصية
+        </button>
       </div>
       <div class="burger">
         <div></div>
@@ -34,92 +39,172 @@
 
     <main class="container">
       <article class="post-blog">
-        
-        <h2>كتابة سرد جديد ✒️</h2>
+        <h2>كــتابة سرد جديد ✒️</h2>
         <div id="errorBox"></div>
-        <form id="blogForm" action="/post" method="POST" enctype="multipart/form-data">
-
+        <form
+          id="blogForm"
+          action="/post"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <div class="Activities">
             <ul class="activities-container">
-              <li><input type="radio" id="checkboxOne" value="طبيعة" name="activityType"><label for="checkboxOne">طبيعة</label></li>
-              <li><input type="radio" id="checkboxTwo" value="تاريخي" name="activityType"><label for="checkboxTwo">تاريخي</label></li>
-              <li><input type="radio" id="checkboxThree" value="ثقافي" name="activityType"><label for="checkboxThree">ثقافي</label></li>
-              <li><input type="radio" id="checkboxFour" value="ترفيهي" name="activityType"><label for="checkboxFour">ترفيهي</label></li>
-              <li><input type="radio" id="checkboxFive" value="تعليمي" name="activityType"><label for="checkboxFive">تعليمي</label></li>
-              <li><input type="radio" id="checkboxSeven" value="علاجي" name="activityType"><label for="checkboxSeven">علاجي</label></li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxOne"
+                  value="طبيعة"
+                  name="activityType"
+                /><label for="checkboxOne">طبيعة</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxTwo"
+                  value="تاريخي"
+                  name="activityType"
+                /><label for="checkboxTwo">تاريخي</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxThree"
+                  value="ثقافي"
+                  name="activityType"
+                /><label for="checkboxThree">ثقافي</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxFour"
+                  value="ترفيهي"
+                  name="activityType"
+                /><label for="checkboxFour">ترفيهي</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxFive"
+                  value="تعليمي"
+                  name="activityType"
+                /><label for="checkboxFive">تعليمي</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="checkboxSeven"
+                  value="علاجي"
+                  name="activityType"
+                /><label for="checkboxSeven">علاجي</label>
+              </li>
             </ul>
           </div>
 
           <div class="sado-partal">
-            <img src="../Media/saudistyle.png" alt="Saudi-Zakhrafa">
+            <img src="../Media/saudistyle.png" alt="Saudi-Zakhrafa" />
           </div>
 
           <div class="date-city-title">
             <div class="date-city-warpper">
-              <input type="date" name="date" required>
+              <input type="date" name="date" required />
 
-                <select id="city" name="city" required>
-                  <option value="" disabled selected>المدينة</option>
-                  <option value="الرياض">الرياض</option>
-                  <option value="جدة">جدة</option>
-                  <option value="مكة المكرمة">مكة المكرمة</option>
-                  <option value="ينبع">ينبع</option>
-                  <option value="الطائف">الطائف</option>
-                  <option value="الجبيل">الجبيل</option>
-                  <option value="الباحة">الباحة</option>
-                  <option value="العلا">العلا</option>
-                  <option value="نجران">نجران</option>
-                  <option value="جازان">جازان</option>
-                  <option value="القصيم">القصيم</option>
-                  <option value="حائل">حائل</option>
-                  <option value="تبوك">تبوك</option>
-                  <option value="عسير">عسير</option>
-                </select>
+              <select id="city" name="city" required>
+                <option value="" disabled selected>المدينة</option>
+                <option value="الرياض">الرياض</option>
+                <option value="جدة">جدة</option>
+                <option value="مكة المكرمة">مكة المكرمة</option>
+                <option value="ينبع">ينبع</option>
+                <option value="الطائف">الطائف</option>
+                <option value="الجبيل">الجبيل</option>
+                <option value="الباحة">الباحة</option>
+                <option value="العلا">العلا</option>
+                <option value="نجران">نجران</option>
+                <option value="جازان">جازان</option>
+                <option value="القصيم">القصيم</option>
+                <option value="حائل">حائل</option>
+                <option value="تبوك">تبوك</option>
+                <option value="عسير">عسير</option>
+              </select>
             </div>
-            <input type="text" id="title" name="title" placeholder="عنوان مَسردك" required maxlength="100" minlength="2">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="عنوان مَسردك"
+              required
+              maxlength="100"
+              minlength="2"
+            />
           </div>
 
-          
           <div class="content-container">
             <div class="textarea-wrapper">
-              <textarea id="content" name="content" rows="10" placeholder="محتوى مَسردك" maxlength="500" minlength="20" required ></textarea>
+              <textarea
+                id="content"
+                name="content"
+                rows="10"
+                placeholder="محتوى مَسردك"
+                maxlength="500"
+                minlength="20"
+                required
+              ></textarea>
 
               <div class="image-decoration">
-                <img src="../Media/footer.png" alt="زخرفة عربية رمادية اللون" class="responsive-image" >
+                <img
+                  src="../Media/footer.png"
+                  alt="زخرفة عربية رمادية اللون"
+                  class="responsive-image"
+                />
               </div>
             </div>
-
 
             <div class="side-container">
               <div class="file-upload-container">
                 <div class="file-upload">
-                  <input name="image" class="file-input" id="fileInput" type="file" accept="image/*">
+                  <input
+                    name="image"
+                    class="file-input"
+                    id="fileInput"
+                    type="file"
+                    accept="image/*"
+                  />
                   <label class="file-label" for="fileInput">
                     <i class="upload-icon">📁</i>
-                    اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك 
+                    اسحب وإفلت أو إضغط هنا لإرفاق صور مَسردك
                   </label>
                 </div>
               </div>
-              <img src="../Media/Saudi-Zakhrafa.png" alt="صورة زخارف منطاق السعودية" class="preview-image">
+              <img
+                src="../Media/Saudi-Zakhrafa.png"
+                alt="صورة زخارف منطاق السعودية"
+                class="preview-image"
+              />
             </div>
           </div>
 
           <!-- Submit Button -->
           <button type="submit" class="submit-button">
-            <img src="../Media/post-icon-white.png" alt="post icon" class="button-icon">
+            <img
+              src="../Media/post-icon-white.png"
+              alt="post icon"
+              class="button-icon"
+            />
             اسرد ابداعك
           </button>
         </form>
       </article>
     </main>
 
-    <img class="footerimg" src="../Media/saudistyle.png" alt="Saudi Purple Sado">
+    <img
+      class="footerimg"
+      src="../Media/saudistyle.png"
+      alt="Saudi Purple Sado"
+    />
     <footer class="footer">
       <div class="footer-content">
-
         <div class="footer-logo">
           <a href="../HTML/index.html">
-            <img id="footer-logo" src="../Media/masrad.PNG" alt="Masrad-logo">
+            <img id="footer-logo" src="../Media/masrad.PNG" alt="Masrad-logo" />
           </a>
         </div>
 

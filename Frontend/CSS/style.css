@@ -100,8 +100,8 @@ nav {
 }
 
 .burger div {
-  width: 30px;
-  height: 4px;
+  width: 25px;
+  height: 1.5px;
   background-color: white;
   margin: 5px;
   transition: 0.4s;
@@ -300,7 +300,7 @@ h2 {
 
 /* المدونات */
 .title {
-  color: #747272;
+  color: #000000;
   font-size: 24px;
   margin-bottom: 20px;
   text-align: end;

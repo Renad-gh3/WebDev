@@ -1,24 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"); */
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
+  font-family: "Tajawal", sans-serif;
 }
 
 body {
   background-color: rgb(237, 230, 221);
-  font-family: "Amiri", serif;
+  font-family: "Tajawal", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   transition: background-image 0.5s ease;
 }
 
-container{
+container {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -26,7 +26,7 @@ container{
 }
 
 article.post-blog {
-  padding: 30px 40px;
+  padding: 80px 40px;
   border-radius: 8px;
   margin: 20px 0px;
 }
@@ -36,34 +36,34 @@ article.post-blog h2 {
   font-size: 2rem;
   color: #2d2b2a;
   text-align: right;
-  font-family: "Amiri", serif;
-  margin-bottom: 40px; 
+  font-family: "Tajawal", sans-serif;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
   article.post-blog h2 {
-      margin-bottom: 30px; 
+    margin-bottom: 30px;
   }
 
   article {
-      padding: 30px; 
+    padding: 30px;
   }
 }
 
-#errorBox{
-  display: none; 
+#errorBox {
+  display: none;
   position: fixed;
   top: 100px;
   left: 45px;
-  background-color: #F24464;
+  background-color: #f24464;
   color: white;
   padding: 15px 40px;
   border-radius: 5px;
-  box-Shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  font-Weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
   z-index: 1000;
   opacity: 1;
-  font-size: 18px; 
+  font-size: 18px;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -72,8 +72,6 @@ form {
   flex-direction: column;
   gap: 25px;
 }
-
-
 
 ul.activities-container {
   display: flex;
@@ -118,38 +116,31 @@ ul.activities-container li input[type="radio"] {
 
 @media (max-width: 768px) {
   ul.activities-container li {
-      flex: 1 1 calc(33.33% - 15px);
+    flex: 1 1 calc(33.33% - 15px);
   }
 }
 
 @media (max-width: 480px) {
   ul.activities-container li {
-      flex: 1 1 calc(50% - 15px); 
+    flex: 1 1 calc(50% - 15px);
   }
 }
 
-
-
-
-.sado-partal img{
+.sado-partal img {
   width: 100%;
 }
 
-
-
-
-
 .date-city-title {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 25px; 
+  flex-wrap: wrap;
+  gap: 25px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.date-city-warpper{
+.date-city-warpper {
   display: flex;
   gap: 8px;
   width: 40%;
@@ -160,7 +151,7 @@ ul.activities-container li input[type="radio"] {
 
 .date-city-warpper input[type="date"],
 .date-city-warpper select {
-  flex: 1; 
+  flex: 1;
   max-width: 48%;
   min-width: 48%;
   padding: 10px;
@@ -176,13 +167,13 @@ ul.activities-container li input[type="radio"] {
 }
 
 .date-city-title input[type="date"],
-.date-city-title select{
+.date-city-title select {
   min-width: unset;
   max-width: unset;
 }
 
 .date-city-title input[type="text"] {
-  flex: 2.5; 
+  flex: 2.5;
   min-width: 130px;
   max-width: 800px;
   padding: 12px;
@@ -206,16 +197,16 @@ ul.activities-container li input[type="radio"] {
 
 @media (max-width: 768px) {
   .date-city-title {
-    flex-direction: column-reverse; 
+    flex-direction: column-reverse;
     gap: 15px;
   }
 
-  .date-city-warpper{
+  .date-city-warpper {
     width: 100%;
     gap: 10px;
   }
 
-  .date-city-title input[type="text"]{
+  .date-city-title input[type="text"] {
     order: -1;
     width: 100%;
     max-width: 100%;
@@ -223,7 +214,7 @@ ul.activities-container li input[type="radio"] {
     height: 50px;
   }
 
-  .date-city-title  input[type="date"],
+  .date-city-title input[type="date"],
   .date-city-title select {
     flex: 1;
     max-width: 48%;
@@ -233,57 +224,46 @@ ul.activities-container li input[type="radio"] {
   }
 }
 
-
 @media (max-width: 375px) {
   .date-city-title {
-      width: 100%;
-      box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .date-city-title input[type="text"] {
-      width: 100%;
-      font-size: 1.2rem;
-      padding: 10px;
-      box-sizing: border-box;
-      height: 50px;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50px;
   }
 
   .date-city-warpper {
-      width: 100%;
-      justify-content: space-between;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .date-city-title select,
-  .date-city-title input[type="date"]{
-      width: 48%; 
-      height: 45px;
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 8px;
+  .date-city-title input[type="date"] {
+    width: 48%;
+    height: 45px;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 8px;
   }
 }
 
-
-
-
-
-
-
-
-
-
 .content-container {
   display: flex;
-  flex-direction: row-reverse; 
-  justify-content: space-between; 
+  flex-direction: row-reverse;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 15px; 
+  gap: 15px;
   width: 100%;
   flex-wrap: wrap;
-  
 }
 
-.textarea-wrapper{
+.textarea-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -306,25 +286,24 @@ textarea {
   background-color: #f9f9f9;
   color: #555;
   margin: 0;
-  box-sizing: border-box; 
-  overflow: auto; 
-  resize: vertical; 
+  box-sizing: border-box;
+  overflow: auto;
+  resize: vertical;
   text-align: right;
   direction: rtl;
 }
 
-
 .preview-image {
   max-width: 300px;
-  height: auto; 
+  height: auto;
   box-sizing: border-box;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 .file-upload-container {
-  flex: 1; 
+  flex: 1;
   min-width: 200px;
-  max-width: 300px; 
+  max-width: 300px;
 }
 
 .file-upload {
@@ -373,62 +352,61 @@ textarea {
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 100%; 
+  width: 100%;
   text-align: center;
-  z-index: 1; 
+  z-index: 1;
   border: 2px solid #d4af37;
   border-top: none;
   border-radius: 4px;
 }
 
 .responsive-image {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  border-radius: 0 0 10px 10px; 
-  display: block; 
-  border-top: none; 
+  border-radius: 0 0 10px 10px;
+  display: block;
+  border-top: none;
 }
-
 
 @media (max-width: 768px) {
   .content-container {
-    flex-direction: column; 
-    align-items: stretch; 
+    flex-direction: column;
+    align-items: stretch;
   }
 
   textarea {
-    width: 100%; 
-    height: 250px; 
-    min-width: unset; 
-    max-width: 100%; 
+    width: 100%;
+    height: 250px;
+    min-width: unset;
+    max-width: 100%;
   }
 
   .file-upload-container {
-    width: 100%; 
+    width: 100%;
     max-width: 100%;
-    padding: 5px 0; 
+    padding: 5px 0;
   }
 
   .file-upload {
-    padding: 20px; 
-    height: 80px; 
+    padding: 20px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .file-label {
-    flex-direction: row; 
-    gap: 10px; 
+    flex-direction: row;
+    gap: 10px;
   }
 
   .upload-icon {
-    font-size: 30px; 
+    font-size: 30px;
     margin-bottom: 0;
   }
 
   .file-upload p {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
   .image-decoration {
@@ -445,15 +423,15 @@ textarea {
   textarea {
     height: 200px;
     font-size: 1.2rem;
-    width: 100%; 
-    padding: 12px; 
+    width: 100%;
+    padding: 12px;
     box-sizing: border-box;
-    text-align: right; 
+    text-align: right;
     direction: rtl;
   }
 
   .file-upload-container {
-    width: 100%; 
+    width: 100%;
   }
 
   .file-upload p {
@@ -461,35 +439,32 @@ textarea {
   }
 }
 
-
-
-
 .submit-button {
   background: #38a5b6;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   transition: background 0.3s ease;
-  width: 100%; 
+  width: 100%;
   max-width: 300px;
   font-family: "Amiri", serif;
   text-align: center;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: end;
   padding: 10px;
 }
 
-.button-icon{
+.button-icon {
   margin-right: 10px;
   width: 30px;
   height: 30px;
   transition: width 0.3s, height 0.3s;
 }
 
-.submit-button:active{
+.submit-button:active {
   animation: move-left 0.3s forwards;
   background-color: #d4af37;
 }
@@ -503,27 +478,20 @@ textarea {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-20px); 
+    transform: translateX(-20px);
   }
 }
 
 @media (max-width: 768px) {
-  
   .submit-button {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .button-icon {
-    width: 25px; 
+    width: 25px;
     height: 25px;
   }
 }
-
-
-
-
-
-
 
 /*من هنا حطيت كود css 
 الي اخذته من ريناد حق الفوتر والهيدر*/
@@ -651,12 +619,6 @@ nav {
     cursor: pointer;
   }
 }
-
-
-
-
-
-
 
 /* فوتر */
 .footerimg {
