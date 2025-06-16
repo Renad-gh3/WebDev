@@ -32,7 +32,7 @@ body {
 }
 /* تنسيقات عامة للصفحة */
 body {
-  background-color: #f8f9fa;
+  background-color: rgb(237, 230, 221);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -49,56 +49,60 @@ body {
 
 /* تنسيقات القسم الأول - المقدمة الجذابة */
 .section1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.482), rgba(0, 0, 0, 0.717)),
-    url("../Media/saudi2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  width: 100%;
-  padding-top: 150px;
-  padding-bottom: 70px;
-  padding-right: 120px; /* مسافة من اليمين */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   position: relative;
+  height: 770px;
+  width: 100%;
   overflow: hidden;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end; /* يحرك المحتوى لليمين */
-  text-align: right; /* النص نفسه لليمين */
 }
 
-.section1::before {
+.section1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(80%);
 }
 
-.section1 h1 {
-  font-size: 4rem;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 2;
-  letter-spacing: 2px;
-  font-weight: 800;
-  color: #fff;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  animation: fadeInUp 1s ease;
+.video-controls {
+  position: absolute;
+  bottom: 90px;
+  right: 90px;
+  display: flex;
+  gap: 10px;
+  z-index: 3; /* علشان يكونوا فوق الفيديو */
 }
 
-.section1 p {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  max-width: 900px;
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  font-weight: 400;
-  animation: fadeInUp 1.2s ease;
-  color: #fff;
+#toggle-play {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.151);
+  border: none;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+#toggle-mute {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.151);
+  border: none;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+.footer-decor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; /* حتى لا تمنع التفاعل مع الأزرار */
 }
 
 /* تنسيقات القسم الثاني - المطورين بطريقة إبداعية */

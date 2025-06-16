@@ -11,6 +11,45 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.classList.remove("active");
     });
   });
+
+  // about us page
+  const video = document.getElementById("bg-video");
+  const playBtn = document.getElementById("toggle-play");
+  const muteBtn = document.getElementById("toggle-mute");
+  const progressBar = document.getElementById("progress-bar");
+
+  const playIcon = document.getElementById("play-icon");
+  const pauseIcon = document.getElementById("pause-icon");
+  const muteIcon = document.getElementById("mute-icon");
+  const unmuteIcon = document.getElementById("unmute-icon");
+
+  playBtn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playIcon.style.display = "none";
+      pauseIcon.style.display = "inline";
+    } else {
+      video.pause();
+      playIcon.style.display = "inline";
+      pauseIcon.style.display = "none";
+    }
+  });
+
+  muteBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    muteIcon.style.display = video.muted ? "inline" : "none";
+    unmuteIcon.style.display = video.muted ? "none" : "inline";
+  });
+
+  video.addEventListener("timeupdate", () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressBar.value = percent;
+  });
+
+  progressBar.addEventListener("input", () => {
+    const newTime = (progressBar.value / 100) * video.duration;
+    video.currentTime = newTime;
+  });
 });
 
 let items = document.querySelectorAll(".slider .list .item");
@@ -41,7 +80,6 @@ let refreshInterval = setInterval(() => {
   next.click();
 }, 9000);
 function showSlider() {
-
   let itemActiveOld = document.querySelector(".slider .list .item.active");
   let thumbnailActiveOld = document.querySelector(".thumbnail .item.active");
   itemActiveOld.classList.remove("active");
@@ -75,7 +113,7 @@ function showSlides() {
   if (slideIndex < 0) {
     slideIndex = totalSlides - 1;
   }
-  slides.style.transform = `translateX(${-slideIndex * 220}px)`; 
+  slides.style.transform = `translateX(${-slideIndex * 220}px)`;
 }
 
 function moveSlides(n) {
@@ -112,7 +150,6 @@ document.querySelectorAll(".city-button, .event-button").forEach((button) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
   async function fetchBlogs() {
     try {
       const response = await fetch("http://localhost:5000/api/post");

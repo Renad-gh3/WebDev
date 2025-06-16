@@ -41,17 +41,40 @@
     </nav>
     <div class="container">
       <section class="section1">
-        <h1 dir="rtl">من نحن؟</h1>
-        <p dir="rtl">
-          نؤمن بأن السفر ليس مجرد تنقل جسدي بين الأماكن، بل هو تجربة تثري الروح
-          وتوسع الآفاق. أنشأنا هذه المدونة لنشارك شغفنا بالسفر، ونقدم لك أدلة
-          مفصلة، تجارب عملية، وتجارب حقيقية تساعدك في التخطيط لرحلاتك بكل سهولة.
-          سواء كنت من عشاق الطبيعة، المغامرات، التاريخ، الثقافة، الترفيه، أو
-          الطعام، ستجد هنا محتوى متنوعًا يناسب اهتماماتك. نهدف إلى تسليط الضوء
-          على الجواهر المخفية في المملكة العربية السعودية واستكشاف ثقافات وتجارب
-          سياحية من مختلف أنحاء مملكتنا الحبيبة.
-        </p>
+        <!-- خلفية الفيديو -->
+        <video id="bg-video" autoplay muted loop playsinline>
+          <source src="../Media/saudiplace2.mp4" type="video/mp4" />
+          المتصفح لا يدعم عرض الفيديو.
+        </video>
+
+<img src="../Media/footer.png" alt="نقش زخرفي" class="footer-decor" />
+
+     
+
+          <!-- أزرار التحكم -->
+          <div class="video-controls">
+           <button id="toggle-play" class="control-btn" aria-label="تشغيل/إيقاف">
+      <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+      </svg>
+    </button>
+
+    <button id="toggle-mute" class="control-btn" aria-label="صوت">
+      <svg id="mute-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M16.5 12c0-1.77-.77-3.37-2-4.47v8.94c1.23-1.1 2-2.7 2-4.47zM5 9v6h4l5 5V4l-5 5H5z" />
+      </svg>
+      <svg id="unmute-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+        <path d="M16.5 12c0-1.77-.77-3.37-2-4.47v8.94c1.23-1.1 2-2.7 2-4.47zM5 9v6h4l5 5V4l-5 5H5z" />
+        <path d="M19 5l-1.41 1.41L21.17 10l-3.58 3.59L19 15l5-5z" />
+      </svg>
+    </button>
+          </div>
+        </div>
       </section>
+
       <div class="section2">
         <h2>مطوروا الموقع</h2>
         <div class="developers-container">
